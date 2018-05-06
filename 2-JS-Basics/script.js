@@ -52,8 +52,8 @@ console.log(fullAge);
 // console.log(ageOfYou);
 
 // if/else
-var name = "Brad";
-var isMarried = false;
+// var name = "Brad";
+// var isMarried = false;
 // if (isMarried === false) { // ===
 // if (!isMarried) {
 //     console.log(name + " is not married.");
@@ -68,4 +68,40 @@ var isMarried = false;
 //     console.log("a Number === a String");
 // }
 
+// boolean logic in JS: && || !
+
+// switch statement
+// var job = "sde";
+// job = prompt("what is your job?");
+// switch(job) {
+//     case "sde":
+//         console.log("sde coding");
+//         break;
+//     case "singer":
+//         console.log("singing");
+//         break;
+//     default:
+//         console.log("make a living");
+//         break;
+// }
+
+// escape
+// console.log("this\'s an escape way.");
+
+// Functions, DRY.
+// function calculateAge(yearOfBirth) {
+//     var age = 2018 - yearOfBirth;
+//     return age;
+// }
+// var ageOfMe = calculateAge(1994);
+// console.log(ageOfMe);
+
+// // nested func.
+// function yearsLeftToRetirement(birthYear) {
+//     var age = calculateAge(birthYear);
+//     var yearsLeftForRetirement = 65 - age;
+//     return yearsLeftForRetirement;
+// }
+// var years = yearsLeftToRetirement(1995);
+// console.log(years);
 
