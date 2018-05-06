@@ -39,3 +39,16 @@ console.log(fullAge);
 
 // alert("Session finished!");
 
+// Operators
+// var now = 2018;
+// var birthYear = now - 24;
+// birthYear = now - 24 * 2;
+// console.log(birthYear);
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
+
+// var ageofMe, ageOfYou;
+// ageOfYou = ageofMe = 24; // Assignment, right-to-left.
+// console.log(ageOfYou);
+
+
