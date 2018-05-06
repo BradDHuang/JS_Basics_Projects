@@ -144,24 +144,47 @@ console.log(fullAge);
 
 // OBJECTS!
 
+// var brad = {
+//     name: "Brad",
+//     lastName: "Hu",
+//     birthYear: 1994,
+//     job: "sde",
+//     isMarried: false
+// }; // {} is used for creating an object.
+// console.log(brad); // it is unordered.
+
+// console.log(brad.birthYear);
+// console.log(brad["birthYear"]); // alternative.
+// var x = "birthYear";
+// console.log(brad[x]); // alternative.
+
+// brad.birthYear = 1995;
+// console.log(brad.birthYear);
+
+// var ben = new Object();
+// ben.name = "Ben";
+// ben["age"] = 32;
+// console.log(ben);
+
 var brad = {
     name: "Brad",
     lastName: "Hu",
     birthYear: 1994,
     job: "sde",
-    isMarried: false
-}; // {} is used for creating an object.
-console.log(brad); // it is unordered.
+    isMarried: false,
+    family: ["James", "Ben"],
+    // calculateAge: function(birthYear) {
+    //     var age = 2018 - birthYear;
+    calculateAge: function() {
+        var age = 2018 - this.birthYear;
+        return age;
+    }
+};
+console.log(brad);
+// console.log(brad.calculateAge(brad.birthYear));
+// console.log(brad.calculateAge());
 
-console.log(brad.birthYear);
-// console.log(brad["birthYear"]); // alternative.
-// var x = "birthYear";
-// console.log(brad[x]); // alternative.
+// brad.age = brad.calculateAge();
+brad.age = 18;
+console.log(brad); // Dynamic, so the line 183 also has the newly added prop.(age)!
 
-brad.birthYear = 1995;
-console.log(brad.birthYear);
-
-var ben = new Object();
-ben.name = "Ben";
-ben["age"] = 32;
-console.log(ben);
