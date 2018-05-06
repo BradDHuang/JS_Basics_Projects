@@ -118,20 +118,50 @@ console.log(fullAge);
 // console.log(someFu(5));
 
 // Arrays.
-var names = ["Brad", "Herman", "M"];
-console.log(names[0]);
-names[0] = "James";
-console.log(names[0]);
-var years = new Array(1994, 1995, 2018);
-console.log(years[1]);
+// var names = ["Brad", "Herman", "M"];
+// console.log(names[0]);
+// names[0] = "James";
+// console.log(names[0]);
+// var years = new Array(1994, 1995, 2018);
+// console.log(years[1]);
 
-var brad = ["Brad", 24, "sde"]; // Mixed data types.
+// var brad = ["Brad", 24, "sde"]; // Mixed data types.
 
-brad.push("male");
-console.log(brad);
-brad.unshift("Shaganger");
-console.log(brad);
-brad.pop();
-console.log(brad);
-brad.shift();
-console.log(brad);
+// brad.push("male");
+// console.log(brad);
+// brad.unshift("Shaganger");
+// console.log(brad);
+// brad.pop();
+// console.log(brad);
+// brad.shift();
+// console.log(brad);
+
+// var index = brad.indexOf("Brad");
+// console.log("brad[" + index + "]: " + "Brad");
+// var index2 = brad.indexOf("B"); // returns -1.
+// console.log(index2);
+
+
+// OBJECTS!
+
+var brad = {
+    name: "Brad",
+    lastName: "Hu",
+    birthYear: 1994,
+    job: "sde",
+    isMarried: false
+}; // {} is used for creating an object.
+console.log(brad); // it is unordered.
+
+console.log(brad.birthYear);
+// console.log(brad["birthYear"]); // alternative.
+// var x = "birthYear";
+// console.log(brad[x]); // alternative.
+
+brad.birthYear = 1995;
+console.log(brad.birthYear);
+
+var ben = new Object();
+ben.name = "Ben";
+ben["age"] = 32;
+console.log(ben);
