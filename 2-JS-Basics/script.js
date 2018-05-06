@@ -116,3 +116,14 @@ console.log(fullAge);
 //     return para * 3;
 // }
 // console.log(someFu(5));
+
+// Arrays.
+var names = ["Brad", "Herman", "M"];
+console.log(names[0]);
+names[0] = "James";
+console.log(names[0]);
+var years = new Array(1994, 1995, 2018);
+console.log(years[1]);
+
+var brad = ["Brad", 24, "sde"]; // Mixed data types.
+
