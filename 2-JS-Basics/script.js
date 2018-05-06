@@ -51,4 +51,21 @@ console.log(fullAge);
 // ageOfYou = ageofMe = 24; // Assignment, right-to-left.
 // console.log(ageOfYou);
 
+// if/else
+var name = "Brad";
+var isMarried = false;
+// if (isMarried === false) { // ===
+// if (!isMarried) {
+//     console.log(name + " is not married.");
+// } else {
+//     console.log(name + " is married.");
+// }
+
+// if (23 == "23") { // JS will look the 23 as "23"(String)!
+//     console.log("Convert a Number to a String");
+// }
+// if (23 === "23") { // 23 and "23" is not the same!
+//     console.log("a Number === a String");
+// }
+
 
