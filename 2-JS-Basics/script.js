@@ -166,6 +166,7 @@ console.log(fullAge);
 // ben["age"] = 32;
 // console.log(ben);
 
+/*
 var brad = {
     name: "Brad",
     lastName: "Hu",
@@ -187,4 +188,26 @@ console.log(brad);
 // brad.age = brad.calculateAge();
 brad.age = 18;
 console.log(brad); // Dynamic, so the line 183 also has the newly added prop.(age)!
+*/
 
+var brad = {
+    name: "Brad",
+    lastName: "Hu",
+    birthYear: 1994,
+    job: "sde",
+    isMarried: false,
+    family: ["James", "Ben"],
+    calculateAge: function() {
+        // var age = 2018 - this.birthYear;
+        this.age = 2018 - this.birthYear;
+        
+        // this.age: "this" is referred to the object(brad).
+        // after the func. calculate() is called, 
+        // the prop.(age) will be added to the object(brad).
+        
+        // return age;
+    }
+};
+console.log(brad);
+brad.calculateAge();
+console.log(brad);
