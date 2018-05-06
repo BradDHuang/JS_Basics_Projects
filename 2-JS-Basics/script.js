@@ -127,3 +127,11 @@ console.log(years[1]);
 
 var brad = ["Brad", 24, "sde"]; // Mixed data types.
 
+brad.push("male");
+console.log(brad);
+brad.unshift("Shaganger");
+console.log(brad);
+brad.pop();
+console.log(brad);
+brad.shift();
+console.log(brad);
