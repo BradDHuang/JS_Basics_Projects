@@ -88,7 +88,7 @@ console.log(fullAge);
 // escape
 // console.log("this\'s an escape way.");
 
-// Functions, DRY.
+// Functions, DRY. 
 // function calculateAge(yearOfBirth) {
 //     var age = 2018 - yearOfBirth;
 //     return age;
@@ -105,3 +105,14 @@ console.log(fullAge);
 // var years = yearsLeftToRetirement(1995);
 // console.log(years);
 
+// func. expression
+// var someFunc = function(param) {
+//     return param * 2;
+// }
+// console.log(someFunc(5));
+
+// // func. statement
+// function someFu(para) {
+//     return para * 3;
+// }
+// console.log(someFu(5));
