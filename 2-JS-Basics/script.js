@@ -190,6 +190,7 @@ brad.age = 18;
 console.log(brad); // Dynamic, so the line 183 also has the newly added prop.(age)!
 */
 
+/*
 var brad = {
     name: "Brad",
     lastName: "Hu",
@@ -211,3 +212,43 @@ var brad = {
 console.log(brad);
 brad.calculateAge();
 console.log(brad);
+*/
+
+
+// Loops
+/*
+var sum = 0;
+for (var i = 1; i <= 100; i++) {
+    // if (i == 100) continue;
+    if (i === 100) continue; // "===" is safer to use in JS.
+    sum += i;
+}
+console.log(sum);
+
+var names = ["A", "B"];
+console.log(names.length);
+
+var addSum = 0;
+// var i = 1; // i is already defined in the for loop above!
+i = 1;
+while (i <= 100) {
+    addSum += i;
+    if (addSum > 1000) break;
+    i++;
+}
+console.log(addSum);
+console.log(i);
+
+var emptyArr = [];
+
+// emptyArr[0] = 0;
+emptyArr.push(0);
+console.log(emptyArr);
+
+i = 23;
+console.log(i + 1);
+console.log(i + 1 + " years"); // 24 years
+
+console.log("He is " + i + 1); // He is 231
+console.log("He is " + (i + 1)); // He is 24
+*/
