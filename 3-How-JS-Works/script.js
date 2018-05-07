@@ -73,7 +73,8 @@ function first() {
 
 function third() {
     var d = 'John';
-    console.log(a + b + c + d);
+    // console.log(a + b + c + d); // b, c are not defined.
+    console.log(a + d);
 }
 */
 
