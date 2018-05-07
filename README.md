@@ -29,10 +29,11 @@ Create a new, empty repository for your project.From your repository’s home pa
 By default GitHub shows the HTTPS link, you will need to toggle it to ssh first!It will look something like:
 "git@github.com:yourname/yourrepository.git".
 
-<!--Open your C9 project window, and go to the terminal.Set your git config username:-->
-<!--git config --global user.name "Your Name Here"-->
-<!--Set your git config email (which should match your github account email):-->
-<!--git config --global user.email "your_email@example.com"-->
+Open your C9 project window, and go to the terminal.Set your git config username:
+git config --global user.name "Your Name Here"
+Set your git config email (which should match your github account email):
+git config --global user.email "your_email@example.com"
+
 Make your current directory a git repository by running:
 git init
 
