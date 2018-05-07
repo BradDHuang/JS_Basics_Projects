@@ -82,3 +82,42 @@ function third() {
 
 ///////////////////////////////////////
 // Lecture: The this keyword
+
+// console.log(this); // Window(default) object.
+
+// calculateAge(1994);
+// function calculateAge(bornYear) {
+//     console.log(2018 - bornYear);
+//     console.log(this); // Window(default) object.
+// }
+
+var brad = {
+    name: "Brad",
+    lastName: "Hu",
+    birthYear: 1994,
+    job: "sde",
+    isMarried: false,
+    family: ["James", "Ben"],
+    calculateAge: function() {
+        console.log(this); // object brad.
+        console.log(2018 - this.birthYear);
+        
+        // function inner() {
+            
+        //     console.log(this); // Window(default) object.
+        // }
+        // inner();
+    }
+};
+brad.calculateAge();
+
+
+var ben = {
+    name: "Ben",
+    birthYear: 1998
+};
+
+ben.calculateAge = brad.calculateAge; // Borrow a func.
+ben.calculateAge();
+// there is an object(ben) returned by calling calculateAge().
+
