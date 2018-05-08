@@ -46,3 +46,25 @@ var brad = new Person("Brad", "SDE", 1994);
 // brad.calculateAge();
 // console.log(ben.familyName);
 // console.log(brad.familyName);
+// console.log(ben instanceof Person); // true
+
+// console.info(ben);
+// console.log(ben);
+
+var personProto = {
+    calculateAge: function() {
+        console.log(2018 - this.birthYear);
+    }
+};
+
+var ben = Object.create(personProto);
+// ben.name = "Ben";
+ben.birthYear = 1995;
+
+var brad = Object.create(personProto, {
+    name: { value: "Brad" },
+    birthYear: { value: 1994 }
+});
+
+// ben.calculateAge();
+// brad.calculateAge();
