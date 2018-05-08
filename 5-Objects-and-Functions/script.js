@@ -95,3 +95,30 @@ function agecalculator(ele) {
 
 var ages = arrayCalculate(birthYears, agecalculator);
 // console.log(ages);
+
+
+// func. returning func.
+function interviewQs(job) {
+    if (job === "sde") {
+        return function(name) {
+            console.log(name + ", can you code with JS?");
+        }
+    } else if (job === "singer") {
+        return function(name) {
+            console.log(name + ", can you rap?");
+        }
+    } else {
+        return function(name) {
+            console.log(name + ", what do you do?");
+        }
+    }
+}
+
+var sdeQs = interviewQs("sde");
+// sdeQs("Brad");
+// sdeQs("Herman");
+var phdQs = interviewQs("phd");
+// phdQs("Ben");
+
+// ******
+// interviewQs("sde")("James");
