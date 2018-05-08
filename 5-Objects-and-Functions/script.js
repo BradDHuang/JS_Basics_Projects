@@ -122,3 +122,30 @@ var phdQs = interviewQs("phd");
 
 // ******
 // interviewQs("sde")("James");
+
+
+// IIFE.
+
+// function () {
+//     // func. without a name!
+// }
+
+// ( function () {
+    
+// } ) 
+// In JS, (...), the content in () will be looked as 
+// an expression, not a statement!
+
+( function () {
+    var s = Math.random() * 10;
+    console.log(s + " >= 5 ?");
+    console.log(s >= 5);
+} )(); // call the func.
+
+( function (param) {
+    var s = Math.random() * 10;
+    console.log(s + " >= 5 - " + param + " ?");
+    console.log(s >= 5 - param);
+} )(5); // pass a param.
+
+
