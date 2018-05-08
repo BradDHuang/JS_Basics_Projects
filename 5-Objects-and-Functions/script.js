@@ -68,3 +68,30 @@ var brad = Object.create(personProto, {
 
 // ben.calculateAge();
 // brad.calculateAge();
+
+
+// Primitives VS. Objects
+
+var obj1 = {
+    age: 24
+};
+var obj2 = obj1;
+obj1.age = 42;
+// console.log(obj2.age); // 42
+
+// passing func. as an argu.
+var birthYears = [1995, 1994, 1993, 1998];
+
+function arrayCalculate(arr, func) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrRes.push(func(arr[i]));
+    }
+    return arrRes;
+}
+function agecalculator(ele) {
+    return 2018 - ele;
+}
+
+var ages = arrayCalculate(birthYears, agecalculator);
+// console.log(ages);
