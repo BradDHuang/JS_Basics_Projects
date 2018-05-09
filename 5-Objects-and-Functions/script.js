@@ -324,5 +324,66 @@ c) correct answer (I would use a number for this)
 */
 
 
+/*
+--- Expert level ---
+
+8. After you display the result, display the next random question, so that the game never ends (Hint: write a function for this and call it right after displaying the result)
+
+9. Be careful: after Task 8, the game literally never ends. So include the option to quit the game if the user writes 'exit' instead of the answer. In this case, DON'T call the function from task 8.
+
+10. Track the user's score to make the game more fun! So each time an answer is correct, add 1 point to the score (Hint: I'm going to use the power of closures for this, but you don't have to, just do this with the tools you feel more comfortable at this point).
+
+11. Display the score in the console. Use yet another method for this.
+*/
+
+(function() {
+    var Question = function(question, answers, answer) {
+    this.question = question;
+    this.answers = answers;
+    this.answer = answer;
+    };
+    
+    Question.prototype.displayQA = function() {
+        console.log(this.question);
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ": " + this.answers[i]);
+        }
+    };
+    
+    Question.prototype.checkAns = function(ans) {
+        if (ans === this.answer) {
+            console.log("Correct Answer!");
+        } else {
+            console.log("Answer is not correct, try again.");
+        }
+    };
+    
+    var q1 = new Question("How old are you?", ["24", "25"], 1);
+    var q2 = new Question("What is your job?", ["sde", "sdeII", "intern"], 2);
+    var q3 = new Question("What degree you are persuing?", ["Ms", "Bs", "Phd"], 0);
+    var qArr = [q1, q2, q3];
+        
+    var nextQ = function() {
+        
+        var qIndex = Math.floor(Math.random() * qArr.length);
+        
+        qArr[qIndex].displayQA();
+        // var correctAnswer = parseInt(prompt("Plz select the correct answer."));
+        var correctAnswer = prompt("Plz select the correct answer. Type in \"exit\" if you wanna exit the quiz."); // we need to compare it with a String later!
+        // qArr[qIndex].checkAns(correctAnswer);
+        
+        // nextQ(); // never ends.
+        if (correctAnswer !== "exit") {
+            // qArr[qIndex].checkAns(correctAnswer);
+            qArr[qIndex].checkAns(parseInt(correctAnswer));
+            nextQ();
+        }
+    };
+    
+    nextQ();
+    
+})();
+
+
 
 
