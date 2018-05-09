@@ -24,7 +24,7 @@ ben.calculateAge();
 // *********
 // Prototype
 // *********
-
+/*
 var Person = function(name, job, birthYear) {
     this.name = name;
     this.job = job;
@@ -40,7 +40,7 @@ Person.prototype.familyName = "Hu";
     
 var ben = new Person("Ben", "SDE", 1995);
 var brad = new Person("Brad", "SDE", 1994);
-
+*/
 // Inheritance
 // ben.calculateAge();
 // brad.calculateAge();
@@ -50,7 +50,7 @@ var brad = new Person("Brad", "SDE", 1994);
 
 // console.info(ben);
 // console.log(ben);
-
+/*
 var personProto = {
     calculateAge: function() {
         console.log(2018 - this.birthYear);
@@ -65,7 +65,7 @@ var brad = Object.create(personProto, {
     name: { value: "Brad" },
     birthYear: { value: 1994 }
 });
-
+*/
 // ben.calculateAge();
 // brad.calculateAge();
 
@@ -78,7 +78,7 @@ var obj1 = {
 var obj2 = obj1;
 obj1.age = 42;
 // console.log(obj2.age); // 42
-
+/*
 // passing func. as an argu.
 var birthYears = [1995, 1994, 1993, 1998];
 
@@ -95,7 +95,7 @@ function agecalculator(ele) {
 
 var ages = arrayCalculate(birthYears, agecalculator);
 // console.log(ages);
-
+*/
 /*
 // func. returning func.
 function interviewQs(job) {
@@ -151,7 +151,7 @@ var phdQs = interviewQs("phd");
 
 
 // Closures
-
+/*
 function retirementAge(retireAge) {
     var str = " years left until retirement.";
     return function(yearOfBirth) {
@@ -181,5 +181,65 @@ function interviewQs(job) {
 // interviewQs("sde")("Brad");
 // interviewQs("singer")("Ben");
 // interviewQs("student")("Brad");
+*/
+
+// CALL
+/*
+var brad = {
+    name: "Brad",
+    age: 24,
+    job: "sde",
+    pre: function(style, timeOfDay) {
+        if (style === "formal") {
+            console.log("Good " + timeOfDay + ", I\'m " + this.name + ", I\'m a/an " + this.job + " and I\'m " + this.age + " years old.");
+        } else if (style === "friendly") {
+            console.log("Hi, What\'s up? Good " + timeOfDay + ", I\'m " + this.name + ", I\'m a/an " + this.job + " and I\'m " + this.age + " years old.");
+        }
+    }
+};
+
+// brad.pre("formal", "afternoon");
+
+var emily = {
+    name: "Emily",
+    age: 28,
+    job: "sdeII"
+};
+// brad.pre.call(emily, "friendly", "morning");
+
+
+// BIND, preset some param.
+
+var bradFriendly = brad.pre.bind(brad, "friendly");
+// bradFriendly("noon");
+// bradFriendly("night");
+var emilyFormal = brad.pre.bind(emily, "formal");
+// emilyFormal("night");
+*/
+
+/*
+var birthYears = [1995, 1994, 1993, 1998];
+
+function arrayCalculate(arr, func) {
+    var arrRes = [];
+    for (var i = 0; i < arr.length; i++) {
+        arrRes.push(func(arr[i]));
+    }
+    return arrRes;
+}
+function agecalculator(ele) {
+    return 2018 - ele;
+}
+// function fullAge(ele) {
+function fullAge(limit, ele) {
+    // return ele >= 18;
+    return ele >= limit;
+}
+
+var ages = arrayCalculate(birthYears, agecalculator);
+var fullAgeInJapan = arrayCalculate(ages, fullAge.bind(this, 24));
+console.log(ages);
+console.log(fullAgeInJapan);
+*/
 
 
