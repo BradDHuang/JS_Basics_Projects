@@ -243,3 +243,86 @@ console.log(fullAgeInJapan);
 */
 
 
+/*
+--- Let's build a fun quiz game in the console! ---
+
+1. Build a function constructor called Question to describe a question. A question should include:
+a) question itself
+b) the answers from which the player can choose the correct one (choose an adequate data structure here, array, object, etc.)
+c) correct answer (I would use a number for this)
+
+2. Create a couple of questions using the constructor
+
+3. Store them all inside an array
+
+4. Select one random question and log it on the console, together with the possible answers (each question should have a number) (Hint: write a method for the Question objects for this task).
+
+5. Use the 'prompt' function to ask the user for the correct answer. The user should input the number of the correct answer such as you displayed it on Task 4.
+
+6. Check if the answer is correct and print to the console whether the answer is correct ot nor (Hint: write another method for this).
+
+7. Suppose this code would be a plugin for other programmers to use in their code. So make sure that all your code is private and doesn't interfere with the other programmers code (Hint: we learned a special technique to do exactly that).
+*/
+
+
+
+// ******
+// make a program Private(change the scope) in JS.
+// ******
+/*
+(function() {
+    // Content
+})(); // IIFE
+*/
+/*
+(function() {
+    // Content
+    var Question = function(question, answers, answer) {
+    this.question = question;
+    this.answers = answers;
+    this.answer = answer;
+    };
+    
+    Question.prototype.displayQA = function() {
+        console.log(this.question);
+        for (var i = 0; i < this.answers.length; i++) {
+            console.log(i + ": " + this.answers[i]);
+        }
+    };
+    
+    Question.prototype.checkAns = function(ans) {
+        if (ans === this.answer) {
+            console.log("Correct Answer!");
+        } else {
+            console.log("Answer is not correct, try again.");
+        }
+    };
+    
+    var q1 = new Question("How old are you?", ["24", "25"], 1);
+    var q2 = new Question("What is your job?", ["sde", "sdeII", "intern"], 2);
+    var q3 = new Question("What degree you are persuing?", ["Ms", "Bs", "Phd"], 0);
+    
+    // var qArr = [];
+    // qArr.push(q1);
+    // qArr.push(q2);
+    // qArr.push(q3);
+    var qArr = [q1, q2, q3];
+    // console.log(qArr);
+    
+    // var qIndex = Math.floor(Math.random() * 3);
+    var qIndex = Math.floor(Math.random() * qArr.length);
+    
+    qArr[qIndex].displayQA();
+    
+    // var correctAnswer = prompt("Plz select the correct answer.");
+    var correctAnswer = parseInt(prompt("Plz select the correct answer."));
+    // parses a string argument and returns an integer.
+    
+    qArr[qIndex].checkAns(correctAnswer);
+    
+})(); // IIFE
+*/
+
+
+
+
