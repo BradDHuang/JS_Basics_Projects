@@ -350,18 +350,40 @@ c) correct answer (I would use a number for this)
         }
     };
     
-    Question.prototype.checkAns = function(ans) {
+    // Question.prototype.checkAns = function(ans) {
+    Question.prototype.checkAns = function(ans, callbackOfScore) {
+        var sc;
         if (ans === this.answer) {
             console.log("Correct Answer!");
+            
+            sc = callbackOfScore(true);
         } else {
             console.log("Answer is not correct, try again.");
+        
+            sc = callbackOfScore(false);
         }
+        
+        this.displaySc(sc); // "this" is the object that the checkAns() is point to.
+    };
+    
+    Question.prototype.displaySc = function(score) {
+        console.log("Your score is: " + score);
+        console.log("************");
     };
     
     var q1 = new Question("How old are you?", ["24", "25"], 1);
     var q2 = new Question("What is your job?", ["sde", "sdeII", "intern"], 2);
     var q3 = new Question("What degree you are persuing?", ["Ms", "Bs", "Phd"], 0);
     var qArr = [q1, q2, q3];
+    
+    function score() {
+        var yourScore = 0;
+        return function(ansIsRight) {
+            if (ansIsRight) yourScore++;
+            return yourScore;
+        };
+    }
+    var showScore = score();
         
     var nextQ = function() {
         
@@ -375,7 +397,8 @@ c) correct answer (I would use a number for this)
         // nextQ(); // never ends.
         if (correctAnswer !== "exit") {
             // qArr[qIndex].checkAns(correctAnswer);
-            qArr[qIndex].checkAns(parseInt(correctAnswer));
+            // qArr[qIndex].checkAns(parseInt(correctAnswer));
+            qArr[qIndex].checkAns(parseInt(correctAnswer), showScore);
             nextQ();
         }
     };
