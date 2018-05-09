@@ -96,7 +96,7 @@ function agecalculator(ele) {
 var ages = arrayCalculate(birthYears, agecalculator);
 // console.log(ages);
 
-
+/*
 // func. returning func.
 function interviewQs(job) {
     if (job === "sde") {
@@ -119,7 +119,7 @@ var sdeQs = interviewQs("sde");
 // sdeQs("Herman");
 var phdQs = interviewQs("phd");
 // phdQs("Ben");
-
+*/
 // ******
 // interviewQs("sde")("James");
 
@@ -135,7 +135,7 @@ var phdQs = interviewQs("phd");
 // } ) 
 // In JS, (...), the content in () will be looked as 
 // an expression, not a statement!
-
+/*
 ( function () {
     var s = Math.random() * 10;
     console.log(s + " >= 5 ?");
@@ -147,5 +147,39 @@ var phdQs = interviewQs("phd");
     console.log(s + " >= 5 - " + param + " ?");
     console.log(s >= 5 - param);
 } )(5); // pass a param.
+*/
+
+
+// Closures
+
+function retirementAge(retireAge) {
+    var str = " years left until retirement.";
+    return function(yearOfBirth) {
+        var age = 2018 - yearOfBirth;
+        console.log((retireAge - age) + str);
+        
+        // Inner func. has Always access to the Var. & Param. of its Outer func!
+    }; 
+}
+
+// retirementAge(65)(1995);
+
+// var retirementAgeC = retirementAge(65);
+// retirementAgeC(1994);
+
+function interviewQs(job) {
+    return function(name) {
+        if (job === "sde") {
+            console.log(name + ", can you code with JS as a/an " + job + " ?");
+        } else if (job === "singer") {
+            console.log(name + ", can you rap as a/an " + job + " ?");
+        } else {
+            console.log(name + ", what do you do? a/an " + job + " ?");
+        }
+    };
+}
+// interviewQs("sde")("Brad");
+// interviewQs("singer")("Ben");
+// interviewQs("student")("Brad");
 
 
