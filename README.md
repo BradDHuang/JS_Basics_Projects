@@ -48,3 +48,8 @@ git commit -m "First commit"
 
 Push your changes:
 git push -u origin master
+
+Tips:
+Using your C9 IDE, navigate to your folder.
+Then click “File” > “Upload Local Files…”
+Then choose the files/images you want to upload.
