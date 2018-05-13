@@ -35,6 +35,27 @@ var budgetController = (function() {
         }
     };
     
+    return {
+        addItem: function(type, description, value) {
+            var newItem, id;
+            
+            id = 0;
+            
+            if (type === "exp") {
+                newItem = new Expense(id, description, value);
+            } else if (type === "inc") {
+                newItem = new Income(id, description, value);
+            }
+            
+            // brad.birthYear;
+            // brad["birthYear"]; // alternative.
+            // var x = "birthYear";
+            // brad[x]; // alternative.
+            data.allItems[type].push(newItem);
+            return newItem;
+        }
+    };
+    
 })(); // IIFE
 // budgetController.x // undefined
 // budgetController.add(5) // Uncaught TypeError: budgetController.add is not a function
