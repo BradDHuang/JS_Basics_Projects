@@ -1,3 +1,5 @@
+// Useful links related to this JS. basics & project repo.
+
 // Event reference
 https://developer.mozilla.org/en-US/docs/Web/Events
 
