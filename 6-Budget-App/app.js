@@ -37,10 +37,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     };
     */
     
-    // step 1: add event handler.
-    document.querySelector(".add__btn").addEventListener("click", function() {
-        // console.log("this is a test: btn was clicked.");
-        
+    var addItem = function() {
         // step 2: get the field input data.
         
         // step 3: add the item to the budget controller.
@@ -51,6 +48,22 @@ var controller = (function(budgetCtrl, UICtrl) {
         
         // step 6: update UI.
         
+        console.log("test works.");
+    };
+    
+    // step 1: add event handler.
+    // document.querySelector(".add__btn").addEventListener("click", function() {
+    //     // console.log("this is a test: btn was clicked.");
+    // });
+    document.querySelector(".add__btn").addEventListener("click", addItem); // addItem is a callback func. here
+    
+    document.addEventListener("keypress", function(KeyboardEvent) {
+       
+    //   console.log(KeyboardEvent);
+        if (KeyboardEvent.keyCode === 13 || KeyboardEvent.which === 13) { // the "Enter" key.
+            // console.log("Enter was pressed!");
+            addItem();
+        }
     });
     
 })(budgetController, UIController);
