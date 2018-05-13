@@ -12,14 +12,35 @@ var budgetController = (function() {
     //     }
     // }; // return an obj.
     
+    // Func. Constructors
+    var Expense = function(id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+    var Income = function(id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
     
+    var data = {
+        allItems: {
+            exp: [],
+            inc: []
+        },
+        totals: {
+            exp: 0,
+            inc: 0
+        }
+    };
     
 })(); // IIFE
 // budgetController.x // undefined
 // budgetController.add(5) // Uncaught TypeError: budgetController.add is not a function
 // budgetController.publicTest(5) // 28
 // x, add() are private; only inner func. publicTest() has access to them.
-
+    
 var UIController = (function() {
     
     var DOMStrings = {
@@ -102,3 +123,6 @@ var controller = (function(budgetCtrl, UICtrl) {
 // controller.publicTest2() // 28
 
 controller.init();
+
+
+
