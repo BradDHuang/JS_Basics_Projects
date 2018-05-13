@@ -39,7 +39,12 @@ var budgetController = (function() {
         addItem: function(type, description, value) {
             var newItem, id;
             
-            id = 0;
+            if (data.allItems[type].length > 0) {
+                // id = last_id + 1;
+                id = data.allItems[type][data.allItems[type].length - 1].id + 1;
+            } else {
+                id = 0; // 0-based.
+            }
             
             if (type === "exp") {
                 newItem = new Expense(id, description, value);
@@ -52,7 +57,12 @@ var budgetController = (function() {
             // var x = "birthYear";
             // brad[x]; // alternative.
             data.allItems[type].push(newItem);
+            
             return newItem;
+        },
+        
+        test: function() {
+            console.log(data);
         }
     };
     
@@ -118,13 +128,17 @@ var controller = (function(budgetCtrl, UICtrl) {
     };
     
     var addItem = function() {
+        var input, newItem;
+        
         // step 2: get the field input data.
-        var input = UICtrl.getInput();
+        input = UICtrl.getInput();
         // console.log(input);
         
         // step 3: add the item to the budget controller.
+        newItem = budgetCtrl.addItem(input.type, input.description, input.value);
         
         // step 4: add the item to the UI.
+        
         
         // step 5: calculate budget.
         
@@ -135,7 +149,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     
     return {
         init: function() {
-            // console.log("app has started...");
+            console.log("app has started...");
             setupEventListeners();
         }  
     };
