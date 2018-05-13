@@ -7,15 +7,30 @@ var budgetController = (function() {
     
     return {
         publicTest: function(b) {
-            console.log(add(b));
+            // console.log(add(b));
+            return add(b);
         }
-    } // return an obj.
+    }; // return an obj.
 })(); // IIFE
-budgetController.x // undefined
-budgetController.add(5) // Uncaught TypeError: budgetController.add is not a function
-budgetController.publicTest(5) // 28
+// budgetController.x // undefined
+// budgetController.add(5) // Uncaught TypeError: budgetController.add is not a function
+// budgetController.publicTest(5) // 28
 // x, add() are private; only inner func. publicTest() has access to them.
 
+var UIController = (function() {
+    
+    
+    
+})();
 
-
-
+var controller = (function(budgetCtrl, UICtrl) {
+    
+    var z = budgetCtrl.publicTest(5);
+    
+    return {
+        publicTest2: function() {
+            console.log(z);
+        }
+    };
+    
+})(budgetController, UIController);
