@@ -5,3 +5,5 @@ https://developer.mozilla.org/en-US/docs/Web/Events
 
 http://keycodes.atjayjo.com
 
+https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
+
