@@ -56,12 +56,29 @@ var controller = (function(budgetCtrl, UICtrl) {
     };
     */
     
-    var DOMstrs = UICtrl.getDOMStrings();
+    // step 1: add event handler.
+    var setupEventListeners = function() {
+        
+        var DOMstrs = UICtrl.getDOMStrings();
+        // document.querySelector(".add__btn").addEventListener("click", function() {
+        //     // console.log("this is a test: btn was clicked.");
+        // });
+        document.querySelector(DOMstrs.inputBtn).addEventListener("click", addItem); // addItem is a callback func. here
+        
+        document.addEventListener("keypress", function(keyboardEvent) {
+           
+        //   console.log(KeyboardEvent);
+            if (keyboardEvent.keyCode === 13 || keyboardEvent.which === 13) { // the "Enter" key.
+                // console.log("Enter was pressed!");
+                addItem();
+            }
+        });
+    };
     
     var addItem = function() {
         // step 2: get the field input data.
         var input = UICtrl.getInput();
-        console.log(input);
+        // console.log(input);
         
         // step 3: add the item to the budget controller.
         
@@ -74,22 +91,14 @@ var controller = (function(budgetCtrl, UICtrl) {
         // console.log("test works.");
     };
     
-    // step 1: add event handler.
-    // document.querySelector(".add__btn").addEventListener("click", function() {
-    //     // console.log("this is a test: btn was clicked.");
-    // });
-    document.querySelector(DOMstrs.inputBtn).addEventListener("click", addItem); // addItem is a callback func. here
-    
-    document.addEventListener("keypress", function(KeyboardEvent) {
-       
-    //   console.log(KeyboardEvent);
-        if (KeyboardEvent.keyCode === 13 || KeyboardEvent.which === 13) { // the "Enter" key.
-            // console.log("Enter was pressed!");
-            addItem();
-        }
-    });
+    return {
+        init: function() {
+            // console.log("app has started...");
+            setupEventListeners();
+        }  
+    };
     
 })(budgetController, UIController);
 // controller.publicTest2() // 28
 
-
+controller.init();
