@@ -22,7 +22,26 @@ var budgetController = (function() {
 
 var UIController = (function() {
     
+    var DOMStrings = {
+        inputType: ".add__type",
+        inputDescription: ".add__description",
+        inputValue: ".add__value",
+        inputBtn: ".add__btn"
+    };
     
+    return {
+        getInput: function() {
+            return {
+              type: document.querySelector(DOMStrings.inputType).value,  
+              description: document.querySelector(DOMStrings.inputDescription).value,  
+              value: document.querySelector(DOMStrings.inputValue).value
+            };
+        },
+        
+        getDOMStrings: function() {
+            return DOMStrings;
+        }
+    };
     
 })();
 // global app controller
@@ -37,8 +56,12 @@ var controller = (function(budgetCtrl, UICtrl) {
     };
     */
     
+    var DOMstrs = UICtrl.getDOMStrings();
+    
     var addItem = function() {
         // step 2: get the field input data.
+        var input = UICtrl.getInput();
+        console.log(input);
         
         // step 3: add the item to the budget controller.
         
@@ -48,14 +71,14 @@ var controller = (function(budgetCtrl, UICtrl) {
         
         // step 6: update UI.
         
-        console.log("test works.");
+        // console.log("test works.");
     };
     
     // step 1: add event handler.
     // document.querySelector(".add__btn").addEventListener("click", function() {
     //     // console.log("this is a test: btn was clicked.");
     // });
-    document.querySelector(".add__btn").addEventListener("click", addItem); // addItem is a callback func. here
+    document.querySelector(DOMstrs.inputBtn).addEventListener("click", addItem); // addItem is a callback func. here
     
     document.addEventListener("keypress", function(KeyboardEvent) {
        
