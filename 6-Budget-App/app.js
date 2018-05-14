@@ -164,7 +164,8 @@ var UIController = (function() {
         incLabel: ".budget__income--value",
         expLabel: ".budget__expenses--value",
         percentageLabel: ".budget__expenses--percentage",
-        container: ".container"
+        container: ".container",
+        expPercentage: ".item__percentage"
     };
     
     return {
@@ -236,6 +237,23 @@ var UIController = (function() {
             }
         },
         
+        displayPercentages: function(percentages) {
+            var nodeList = document.querySelectorAll(DOMStrings.expPercentage); // Returns a NodeList!
+        
+            var nodeListLoop = function(list, callback) {
+                for (var i = 0; i < list.length; i++) {
+                    callback(list[i], i);
+                }
+            };
+            nodeListLoop(nodeList, function(node, index) {
+                if (percentages[index] > 0) {
+                    node.textContent = percentages[index] + '%';
+                } else {
+                    node.textContent = "n/a";
+                }
+            });
+        },
+        
         getDOMStrings: function() {
             return DOMStrings;
         }
@@ -292,7 +310,8 @@ var controller = (function(budgetCtrl, UICtrl) {
         budgetCtrl.calculatePercentages();
         var exp_percentages = budgetCtrl.getPercentages();
         
-        console.log(exp_percentages);
+        // console.log(exp_percentages);
+        UICtrl.displayPercentages(exp_percentages);
     };
     
     var addItem = function() {
