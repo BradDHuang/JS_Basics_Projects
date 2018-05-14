@@ -71,6 +71,20 @@ var budgetController = (function() {
             return newItem;
         },
         
+        deleteItem: function(type, id) {
+            // e.g. if we deleted the item with id=3 already
+            // then the ids left will be [0,1,2,4,5,...], so now id=4 with index=3.
+            var ids, index;
+            ids = data.allItems[type].map(function(cur) {
+                return cur.id;
+            }); // a New arr.
+            index = ids.indexOf(id); // -1 if not found.
+            
+            if (index !== -1) {
+                data.allItems[type].splice(index, 1); // remove 1 ele. from index
+            }
+        },
+        
         calculateBudget: function() {
             // total inc/exp
             calculateTotal("inc");
@@ -271,11 +285,12 @@ var controller = (function(budgetCtrl, UICtrl) {
         itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
         if (itemID) {
         // itemID format: e.g. inc-0, exp-1.
-            splitID = itemID.split('-'); // an String arr.
+            splitID = itemID.split('-'); // an String arr. ["inc", "0"]
             type = splitID[0];
-            id = splitID[1];
+            id = parseInt(splitID[1]);
             
             // delete the item from db.
+            budgetCtrl.deleteItem(type, id);
             
             // delete it from UI.
             
