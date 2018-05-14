@@ -168,6 +168,24 @@ var UIController = (function() {
         expPercentage: ".item__percentage"
     };
     
+    var formatNum = function(num, type) {
+        // '+'/'-'; 2-decimal-points; comma separating. (-1,000.00)
+        // var numSplit, int, dec, sign;
+        var numSplit, int, dec;
+        num = Math.abs(num);
+        num = num.toFixed(2); // 2-decimal-points, returns a String!
+        numSplit = num.split('.');
+        int = numSplit[0];
+        if (int.length > 3) { // assume input are <= 999,999.99
+            var len = int.length;
+            int = int.substr(0, len - 3) + ',' + int.substr(len - 3, 3);
+        }
+        dec = numSplit[1];
+        // type === "exp" ? sign = '-' : sign = '+';
+        // return sign + " " + int + "." + dec;
+        return (type === "exp" ? '-' : '+') + " " + int + "." + dec;
+    };
+    
     return {
         getInput: function() {
             return {
@@ -196,7 +214,8 @@ var UIController = (function() {
             // replace the placeholder text with actual data
             newHtml = html.replace("%id%", obj.id);
             newHtml = newHtml.replace("%description%", obj.description);
-            newHtml = newHtml.replace("%value%", obj.value);
+            // newHtml = newHtml.replace("%value%", obj.value);
+            newHtml = newHtml.replace("%value%", formatNum(obj.value, type));
             
             // insert the HTML to the DOM
             /*element.insertAdjacentHTML(position, text);
@@ -227,9 +246,16 @@ var UIController = (function() {
         },
         
         displayBudget: function(obj) {
-            document.querySelector(DOMStrings.budgetLabel).textContent = obj.budget;
-            document.querySelector(DOMStrings.incLabel).textContent = obj.totalInc;
-            document.querySelector(DOMStrings.expLabel).textContent = obj.totalExp;
+            
+            var type;
+            obj.budget >= 0 ? type = "inc" : type = "exp";
+            
+            // document.querySelector(DOMStrings.budgetLabel).textContent = obj.budget;
+            // document.querySelector(DOMStrings.incLabel).textContent = obj.totalInc;
+            // document.querySelector(DOMStrings.expLabel).textContent = obj.totalExp;
+            document.querySelector(DOMStrings.budgetLabel).textContent = formatNum(obj.budget, type);
+            document.querySelector(DOMStrings.incLabel).textContent = formatNum(obj.totalInc, "inc");
+            document.querySelector(DOMStrings.expLabel).textContent = formatNum(obj.totalExp, "exp");
             if (obj.percentage > 0) {
                 document.querySelector(DOMStrings.percentageLabel).textContent = obj.percentage + '%';
             } else {
