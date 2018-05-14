@@ -121,7 +121,8 @@ var UIController = (function() {
         budgetLabel: ".budget__value",
         incLabel: ".budget__income--value",
         expLabel: ".budget__expenses--value",
-        percentageLabel: ".budget__expenses--percentage"
+        percentageLabel: ".budget__expenses--percentage",
+        container: ".container"
     };
     
     return {
@@ -140,11 +141,13 @@ var UIController = (function() {
             if (type === "inc") {
                 ele = DOMStrings.incContainer;
                 // html = '<div class="item clearfix" id="income-0"><div class="item__description">Salary</div><div class="right clearfix"><div class="item__value">+ 2,100.00</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
-                html = '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                // html = '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
             } else if (type === "exp") {
                 ele = DOMStrings.expContainer;
                 // html = '<div class="item clearfix" id="expense-0"><div class="item__description">Apartment rent</div><div class="right clearfix"><div class="item__value">- 900.00</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
-                html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                // html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+                html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div><div class="item__percentage">21%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
             }
             
             // replace the placeholder text with actual data
@@ -220,6 +223,8 @@ var controller = (function(budgetCtrl, UICtrl) {
                 addItem();
             }
         });
+        
+        document.querySelector(DOMstrs.container).addEventListener("click", deleteItem);
     };
     
     var updateBudget = function() {
@@ -255,6 +260,28 @@ var controller = (function(budgetCtrl, UICtrl) {
         }
         
         // console.log("test works.");
+    };
+    
+    var deleteItem = function(event) {
+        var itemID, splitID, type, id;
+        // console.log(event.target);
+        // console.log(event.target.parentNode);
+        // console.log(event.target.parentNode.parentNode.parentNode.parentNode);
+        // console.log(event.target.parentNode.parentNode.parentNode.parentNode.id);
+        itemID = event.target.parentNode.parentNode.parentNode.parentNode.id;
+        if (itemID) {
+        // itemID format: e.g. inc-0, exp-1.
+            splitID = itemID.split('-'); // an String arr.
+            type = splitID[0];
+            id = splitID[1];
+            
+            // delete the item from db.
+            
+            // delete it from UI.
+            
+            // update and display new budget.
+            
+        }
     };
     
     return {
