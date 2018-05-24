@@ -1,0 +1,47 @@
+
+// notes
+
+this:
+1 - Global Context, when "this" is not inside a declared obj.
+    e.g. var person = "Brad" // undefined
+         window.person // "Brad"
+         window.person === person // true
+    e.g. var data = {}; // undefined
+         data.instructor = "Elie"
+    Strict Mode
+    
+2 - Implicit/Object, when "this" IS inside of a declared obj.
+    "this" refers to the closest parent Obj.
+    Nested Objects
+    
+3 - Explicit Binding, call() apply() bind()
+    e.g. colt.sayHi() // Hi Colt
+         colt.sayHi.call(elie) // Hi Elie, .call(this)
+         colt.sayHi.apply(elie) // Hi Elie, .apply(this)
+    // apply() is almost identical to call()
+    // Except the parameters
+    e.g. colt.addNums(1, 2, 3) // Colt got 6
+         colt.addNums.call(elie, 1, 2, 3) // Elie got 6, .call(this, param1, param2, param3)
+         colt.addNums.apply(elie, [1, 2, 3]) // Elie got 6, .apply(this, [param1, param2, param3])
+    // bind(), the parameters work like call()
+    // But bind() returns a func.
+    e.g. var elieGot = colt.addNums.bind(elie, 1, 2, 3) // function() {} ...
+         elieGot() // Elie got 6
+    // With bind(), not need to know all the args up front(预先)!
+    e.g. var elieGot = colt.addNums.bind(elie, 1) // function() {} ...
+         elieGot(2, 3) // Elie got 6
+    bind() can be used for Async methods like: 
+        setTimeout(function() { // window method
+        	console.log("HI")
+        }, 10000) // 10000ms
+        
+    // Use bind() to set the context of "this"!
+        setTimeout(function() { 
+        	console.log("HI")
+        }.bind(this), 10000)
+    
+        
+    
+         
+    
+    
