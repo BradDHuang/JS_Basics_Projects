@@ -23,7 +23,30 @@ Constructor Func.s
     rusty.bark() // Rusty just barked！
     fido.bark() // Fido just barked！
 
-
+Multi-Constructors
+    e.g.
+    function Car(...) {
+        ...
+        // preset value
+        this.numOfWheels = 4;
+    }
+    function Motorcycle(...) {
+        // using call()/apply()
+        
+        Car.call(this, ...)
+        
+        Car.apply(this, [...])
+        Car.apply(this, arguments)
+        e.g. 
+        function listArgs() {
+            return arguments;
+        }
+        listArgs(1, 2, 3) // [1, 2, 3]
+        
+        this.numOfWheels = 2;
+    }
+    
+    
 
 
 
