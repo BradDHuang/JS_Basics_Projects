@@ -5,10 +5,10 @@ a programming Model based around objects.
 Constructor Func.s
     e.g. function House(...) {...}
          var firstHouse = new House(...) // new!
-         a property called "__proto__" // prototype
+         a property called "__proto__" gets created. // prototype
      
-     e.g. 
-     function Dog(name, age) {
+    e.g. 
+    function Dog(name, age) {
     	this.name = name;
     	this.age = age;
     	
@@ -46,7 +46,28 @@ Multi-Constructors
         this.numOfWheels = 2;
     }
     
+__proto__ : Object
+Anytime an object is created using the "new", 
+the property called "__proto__" gets created,
+linking the object and the prototype property of the constructor func.
+    e.g.
+    function Person(name) {
+        this.name = name;
+    }
+    var elie = new Person("Elie");
+    
+    elie.__proto__ === Person.prototype // true
+    
+    Person.prototype.constructor // ƒ Person(name) { this.name = name; }
+    Person.prototype.constructor === Person // true
+    
+    
+    
+    
+    
     
 
+    
+    
 
 
