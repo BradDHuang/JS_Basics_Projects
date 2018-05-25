@@ -81,6 +81,28 @@ prototype Chain:
     e.g. 
     Array -(.prototype)-> Array.prototype -(.__proto__)-> Object.prototype -(.__proto__)-> null
     
+Refactoring:
+    e.g. 
+    function Person(name) {
+        this.name = name;
+        this.sayHi = function() {
+            return "Hi " + this.name;
+        }
+    }
+    elie = new Person("Elie");
+    elie.sayHi();
+    
+    function Person(name) {
+        this.name = name;
+        
+    }
+    
+    // Once Only 
+    Person.prototype.sayHi = function() {
+        return "Hi " + this.name;
+    }
+    elie = new Person("Elie");
+    elie.sayHi();
     
     
     
