@@ -104,6 +104,26 @@ Refactoring:
     elie = new Person("Elie");
     elie.sayHi();
     
+Closures:
+A func. that make use of Var.s defined in Outer func.s that have previously returned.
+    e.g.
+    function outer() {
+    
+        var data = "Closures are "; 
+        // look "data" as a "private" var;
+        // no one can Modify it.
+        
+        return function inner() {
+            var iData = "awesome!";
+            
+            return data + iData;
+        }
+    }
+    outer() // returns the inner() func.
+    outer()() // "Closures are awesome!"
+    
+    
+    
     
     
     
