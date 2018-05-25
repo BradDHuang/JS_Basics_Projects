@@ -61,6 +61,26 @@ linking the object and the prototype property of the constructor func.
     Person.prototype.constructor // ƒ Person(name) { this.name = name; }
     Person.prototype.constructor === Person // true
     
+prototype:
+    the prototype is Shared among ALL objects created by that constructor func.
+    e.g.
+    var colt = new Person("Colt");
+    // Set
+    Person.prototype.isInstructor = true;
+    // For all
+    elie.isInstructor; // true
+    colt.isInstructor; // true
+    
+    console.dir() 
+    the way to see all the properties of specified javascipt object in console 
+    
+    var arr = [];
+    arr.__proto__ === Array.prototype; // true
+    
+prototype Chain:
+    e.g. 
+    Array -(.prototype)-> Array.prototype -(.__proto__)-> Object.prototype -(.__proto__)-> null
+    
     
     
     
