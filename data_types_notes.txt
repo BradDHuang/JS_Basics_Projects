@@ -1,0 +1,19 @@
+
+
+DATA TYPE - NULL & UNDEFINED
+• Both have one possible value:
+    • null
+    • undefined
+
+• Both represent something that doesn’t exist.
+
+• Difference:
+    • null is usually available to programmers.
+    • undefined should be reserved for JavaScript itself, 
+      to indicate that something hasn’t been given a value yet.
+      
+      
+      
+      
+      
+      
