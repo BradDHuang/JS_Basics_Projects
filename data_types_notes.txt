@@ -13,6 +13,68 @@ DATA TYPE - NULL & UNDEFINED
       to indicate that something hasn’t been given a value yet.
       
       
+DATA TYPE - ARRAYS
+
+• An ordered collection of values/elements
+• Each ele. has a numeric position in the array
+• 0-based index: 1st ele. in the array is ele. with index 0
+• Size is not fixed; add or remove elements at any time
+• Not homogeneous: individual ele. can be of any type
+
+
+BASIC ARRAY METHODS：
+
+    var arr = [0];
+    arr.push(-1);
+    console.log(arr); // [0, -1]
+    arr.forEach((ele) => {
+        console.log(ele);
+    });
+    // The unshift() method adds one or more elements 
+    // to the beginning of an array and returns the new length of the array.
+    console.log(arr.unshift(4, 2)); // 4
+    console.log(arr); // [4, 2, 0, -1]
+    // The shift() method removes the first element from an array 
+    // and returns that removed element. This method changes the length of the array.
+    console.log(arr.shift()); // 4
+    console.log(arr); // [2, 0, -1]
+    
+    arr.sort();
+    console.log(arr); // [-1, 0, 2]
+    arr.reverse();
+    console.log(arr); // [2, 0, -1]
+    arr.pop();
+    console.log(arr); // [2, 0]
+    console.log(arr.toString());
+    
+    // The slice() method returns a shallow copy of a portion of an array 
+    // into a new array object selected from begin to end (end not included). 
+    // The original array will not be modified.
+    var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+    console.log(animals.slice(2)); // ["camel", "duck", "elephant"]
+    console.log(animals.slice(2, 4)); // ["camel", "duck"]
+    
+    // The splice() method changes the contents of an array 
+    // by removing existing elements and/or adding new elements.
+    var months = ['Jan', 'March', 'April', 'June'];
+    months.splice(1, 0, "Feb"); // inserts at 1st index position
+    console.log(months); // ["Jan", "Feb", "March", "April", "June"]
+    months.splice(4, 1, "May"); // replaces 1 element at 4th index
+    console.log(months); // ["Jan", "Feb", "March", "April", "May"]
+    
+    var array1 = ['a', 'b', 'c'];
+    var array2 = ['d', 'e', 'f'];
+    console.log(array1.concat(array2));
+    // ["a", "b", "c", "d", "e", "f"]
+    
+    // The join() method joins all elements of an array (or an array-like object) 
+    // into a string and returns this string.
+    var elements = ['Fire', 'Wind', 'Rain'];
+    console.log(elements.join());    // Fire,Wind,Rain
+    console.log(elements.join(""));  // FireWindRain
+    console.log(elements.join("-")); // Fire-Wind-Rain
+      
+      
       
       
       
