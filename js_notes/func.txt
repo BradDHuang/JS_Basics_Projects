@@ -1,0 +1,118 @@
+
+
+function f(x) {
+    return x + 3;
+}
+console.log(f(5)); // 8
+// console.log(x); // ReferenceError: x is not defined
+
+3 TYPES OF SCOPING
+    • Global Scope
+        • Objects declared outside of any function
+        • Visible everywhere in a JS program
+        • Use without declaring – not allowed under ‘strict’ mode
+    • Function Scope
+        • Objects declared inside a function
+        • Keyword ‘var’
+    • Block Scope
+        • Objects declared inside a block e.g. a for-loop
+        • Keywords ‘let’ and ‘const’
+        
+// Declare an immutable variable in block scope
+// • must be initialized
+const obj = { par: 3 };
+obj = 4; // TypeError: Assignment to constant variable.
+// • Changing the object values is still possible
+obj.par = 12; // Fine
+
+LET
+• Declares variables in block scope
+• not hoisted 
+
+/*
+if (true) {
+    var x = 3;
+}
+console.log(x); // 3
+*/
+if (true) {
+    let x = 3;
+}
+console.log(x); // ReferenceError: x is not defined
+
+{
+    // outer block
+    let x = 'blue';
+    console.log(x); // logs "blue"
+    {
+        // inner block
+        let x = 3;
+        console.log(x); // logs "3"
+    }
+
+    console.log(x); // logs "blue"
+}
+console.log(typeof(x)); // logs "undefined"; x is out of scope.
+
+
+HOISTING
+    • A variable can be declared after it has been used.
+    
+    • Hoisting is to move all declarations to the top of the current scope 
+      (to the top of the current script or the current function).
+    • Only hoists declarations, not initializations, meaning 
+      the initialization statement is splitted into two parts(declaration part & assignment part).
+    • Only works for function scope.
+    
+
+FUNCTION EXPRESSION
+    e.g. 
+    var functionName = function(arg0, arg1, arg2) {
+        //function body
+    };
+
+    • Behaves almost the same as function declaration, 
+      but NO hoisting
+    e.g.
+    notHoisted(); // TypeError: notHoisted is not a function
+    var notHoisted = function() {
+        console.log('bar');
+    }
+      
+   // Function declaration allows ‘hoisting’.
+    e.g. 
+    hoisted(); // logs ‘foo’
+    function hoisted() {
+        console.log('foo');
+    }
+   
+const o1 = {
+    name: 'Wallace', // primitive property
+    bark: function() { return 'Woof!'; } // function property (method)
+}
+const o2 = {
+    name: 'Wallace', // primitive property
+    bark() { return 'Woof!'; } // function property (method)
+}
+var s1 = o1.bark();
+console.log(s1);
+var s2 = o2.bark();
+console.log(s2);
+
+
+CALLING f() VS. REFERENCING f :
+
+    function getGreeting() {
+        return "Hello world!";
+    }
+    console.log(getGreeting()); // "Hello, World!"
+    getGreeting; // function getGreeting()
+    console.log(typeof(getGreeting)); // function
+    const f = getGreeting;
+    console.log(f()); // "Hello, World!"
+
+
+
+
+
+

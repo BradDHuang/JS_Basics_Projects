@@ -1,0 +1,25 @@
+
+
+https://www.w3schools.com/quiztest/quiztest.asp?qtest=JavaScript
+
+5. The external JavaScript file must contain the <script> tag.
+    You answered:
+    True
+    Wrong Answer!
+    
+20. How can you detect the client's browser name?
+    You answered:
+    browser.name
+    Wrong Answer!
+// The window.navigator object contains information about the visitor's browser.
+
+Window Navigator
+    The window.navigator object can be written without the window prefix.
+    Some examples:
+        navigator.appName // The appName property returns the application name of the browser.
+        navigator.appCodeName
+        navigator.platform
+
+
+
+
