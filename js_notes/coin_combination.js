@@ -53,3 +53,7 @@ num of 25 is: 1
 num of 5 is: 7
 num of 1 is: 40
 */
+
+// Reference:
+// http://agilestyle.iteye.com/blog/2361927
+
