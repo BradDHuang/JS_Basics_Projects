@@ -57,3 +57,39 @@ num of 1 is: 40
 // Reference:
 // http://agilestyle.iteye.com/blog/2361927
 
+// Optional Solution: Use for-loops.
+var coins = [50, 25, 5, 1];
+var numOfCoins = 48;
+var amount = 100;
+var solutions = 0;
+function combinations(coins, numOfCoins, amount, solutions) {
+    for (let i = 0; i <= amount / coins[0]; i++) {       
+        for (let j = 0; j <= amount / coins[1]; j++) {            
+            for (let k = 0; k <= amount / coins[2]; k++) {               
+                for (let l = 0; l <= numOfCoins; l++) {
+                    let res = amount - (i * coins[0] + j * coins[1] + k * coins[2] + l * coins[3]);
+                    if (res > 0) continue;
+                    if (res < 0) break;
+                    if (res === 0) {
+                        if ((i + j + k + l) === numOfCoins) {
+                            solutions++;
+                            if (solutions <= 2) {
+                                console.log("50: " + i + ", 25: " + j + ", 5: " + k + ", 1: " + l);
+                            } else break;
+                        } else continue;
+                    }
+                }
+            }
+        }
+    }
+}
+combinations(coins, numOfCoins, amount, solutions);
+// 50: 0, 25: 0, 5: 13, 1: 35
+// 50: 0, 25: 1, 5: 7, 1: 40
+
+
+
+
+
+
+
