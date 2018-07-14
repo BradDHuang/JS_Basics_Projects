@@ -1,0 +1,67 @@
+
+
+Object Destructuring:
+
+// a normal object
+const obj = { b: 2, c: 3, d: 4 };
+// object destructuring assignment
+const {a, b, c} = obj;
+console.log(a); // undefined: there was no "a" in obj
+console.log(b); // 2
+console.log(c); // 3
+// d; // reference error: "d" is not defined
+
+
+SPREAD OPERATOR(…) :
+    let arr1 = [1, 2];
+    let arr2 = [3, 4];
+    arr1.push(...arr2);
+    console.log(arr1); // [1, 2, 3, 4]
+    arr1.push(arr2);
+    console.log(arr1); // [1, 2, 3, 4, [3, 4]]
+    let dateParts = [1961, 3, 16];
+    let birthday = new Date(...dateParts);
+    console.log(birthday.toDateString()); // Sun Apr 16, 1961
+    let arr3 = ['bar', 'baz'];
+    let arr4 = ['foo', ...arr3, 'qux'];
+    console.log(arr4); // ['foo', 'bar', 'baz', 'qux']
+
+
+// Arg.s
+function sum() {
+    var sum = 0;
+    for (let i = 0; i < arguments.length; i ++) {
+        sum += parseInt(arguments[i]);
+    }
+    return sum;
+}
+console.log(sum(1, 2, 4)); // 7
+// With any number of arguments, it creates a list, 
+// using each argument as an item in the list
+
+
+ANONYMOUS FUNC.
+• A func. without a name / an identifier
+• When a func. expression is used without assigning it to a var.
+
+
+CALLBACK:
+A func. name is used as an input parameter.
+
+    function invokeAdd(a, b) {
+        return a() + b(); 
+    }
+    function one() { return 1; }
+    function two() { return 2; }
+    invokeAdd(one, two);
+    
+    invokeAdd( function () { return 1; }, function () { return 2; });
+    
+    
+
+
+
+
+
+
+
