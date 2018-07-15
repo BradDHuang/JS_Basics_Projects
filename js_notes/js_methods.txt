@@ -1,0 +1,24 @@
+
+// related JavaScript Methods:
+
+Number.isInteger()
+    determines whether a value an integer.
+    This method returns true if the value is of the type Number, and an integer (a whole number). 
+    Otherwise it returns false.
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
