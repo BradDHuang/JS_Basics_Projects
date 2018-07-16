@@ -6,7 +6,17 @@ Number.isInteger()
     This method returns true if the value is of the type Number, and an integer (a whole number). 
     Otherwise it returns false.
     
+String split() 
+    used to split a string into an array of substrings, and returns the new array.
+    Tip: If an empty string ("") is used as the separator, the string is split between each character.
+    Note: The split() method does not change the original string.
     
+Accessing JavaScript Properties:
+    objectName.property          // person.age
+    
+    objectName["property"]       // person["age"]
+    
+    objectName[expression]       // x = "age"; person[x]
 
 
 
