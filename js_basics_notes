@@ -50,6 +50,18 @@ this:
     elie.firstName // "Elie"
     
     
+Operator Precedence:
+e.g. 2018 - 1998 >= 18; // true
+
+e.g. var x, y;
+     x = y = 2;
+     console.log(x, y); // 2 2
+Assignment, right-to-left.
+     // y = 2; x = y;
+     
+
+    
+    
         
     
          
