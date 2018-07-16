@@ -92,6 +92,10 @@ for (let i = 0; i < mixedArr.length; i++) {
 */
 
 
+// Ref. 
+// https://wsvincent.com/javascript-object-oriented-deck-cards/
+
+
 
 
 
