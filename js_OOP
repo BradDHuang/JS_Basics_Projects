@@ -123,6 +123,36 @@ A func. that make use of Var.s defined in Outer func.s that have previously retu
     outer()() // "Closures are awesome!"
     
     
+ES2015/ES6 created OOP syntax.
+• ES5 uses function/prototype to implement OOP.
+
+
+CLASS GET/SET OF PROPERTIES:
+    The get syntax binds an object property to a function that will be called when that property is looked up.
+    The set syntax binds an object property to a function to be called when there is an attempt to set that property.
+
+class o {
+    constructor() {
+        this.mx = 'initial';
+    }
+    get x() {
+        console.log('x is being retrieved!');
+        return this.mx;
+    }
+    set x(val) {
+        console.log('x changed');
+        this.mx = val;
+    }
+}
+let e = new o();
+console.log(e.x);
+e.x = 5;
+console.log(e.x);
+
+
+
+    
+    
     
     
     
