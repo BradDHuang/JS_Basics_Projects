@@ -2,6 +2,11 @@
 OOP:
 a programming Model based around objects.
 
+
+CONSTRUCTOR PATTERN:
+To use a ‘Constructor’ function, 
+which extends system-defined constructors, such as Array and Object.
+
 Constructor Func.s
     e.g. function House(...) {...}
          var firstHouse = new House(...) // new!
@@ -67,7 +72,9 @@ prototype:
     var colt = new Person("Colt");
     // Set
     Person.prototype.isInstructor = true;
-    // For all
+    
+    // For all instances.
+    
     elie.isInstructor; // true
     colt.isInstructor; // true
     
@@ -78,8 +85,65 @@ prototype:
     arr.__proto__ === Array.prototype; // true
     
 prototype Chain:
-    e.g. 
+    e.g.1 
     Array -(.prototype)-> Array.prototype -(.__proto__)-> Object.prototype -(.__proto__)-> null
+    e.g.2
+    dave.__proto__.constructor; // function Person()  
+    dave.__proto__.__proto__.constructor; // function Object()  
+    
+    // prototype is the object that is used to build __proto__ when you create an object with "new".
+    The prototype is a property on a constructor function 
+        that sets what will become the __proto__ property on the constructed object.
+    e.g. 
+    function Foo(name) {
+      this.name = name;
+    }
+    var b = new Foo('b');
+    var a = new Foo('a');
+    b.say = function() {
+      console.log('Hi from ' + this.whoAmI());
+    }
+    console.log(a.__proto__ === Foo.prototype); // true
+    console.log(a.__proto__ === b.__proto__); // true
+    
+    // prototype is not available on the instances themselves (or other objects), 
+    // but only on the constructor functions.
+    ( new Foo ).__proto__ === Foo.prototype  //true
+    ( new Foo ).prototype === undefined      //true
+    
+    Cat.prototype = new Animal();
+    //it will properly follow the prototype chain through the inheritance hierarchy.
+    Cat.prototype = Animal.prototype;
+    //any runtime changes to the Cat prototype would also affect the Animal prototype.
+
+// Notice!!!
+function Dog() {} // the usual constructor function
+
+Dog.prototype = new Animal();
+
+Dog.prototype.constructor = Dog;
+
+// Note that the prototype in Foo.prototype is not to form a prototype chain. 
+// Foo.prototype points to some where in a prototype chain, 
+// but this prototype property of Foo is not to form the prototype chain. 
+
+// What constitute a prototype chain are the __proto__ pointing up the chain, and the objects pointed to by __proto__, 
+// such as going from foo.__proto__, going up to foo.__proto__.__proto__, and so forth, until null is reached.
+
+Relation of __proto__ and prototype:
+
+    JavaScript’s Pseudo Classical Inheritance works like this way: 
+    I am a constructor, and I am just a function, and I hold a prototype reference, 
+    and whenever foo = new Foo() is called, I will let foo.__proto__ point to my prototype object. 
+    So Foo.prototype and obj.__proto__ are 2 different concepts. 
+    
+    Foo.prototype indicates that, when an object of Foo is created, 
+    this is the point where the prototype chain of the new object should point to,
+    that is, foo.__proto__ should point to where Foo.prototype is pointing at.
+    
+    Ref:
+    https://hackernoon.com/understand-nodejs-javascript-object-inheritance-proto-prototype-class-9bd951700b29
+    
     
 Refactoring:
     e.g. 
@@ -150,8 +214,50 @@ e.x = 5;
 console.log(e.x);
 
 
+OOP Implementation in ES5:
+
+    Define A Class with local properties ---> Constructor pattern
+    Shared functions ---> Prototype pattern
+    Inheritance ---> Chained Prototype pattern
+    
+    
+NEW OPERATOR:
+    1. Create a new object.
+    2. Assign the ‘this’ value of the constructor to the new object (so this points to the new object).
+    3. Execute the code inside the constructor (adds properties to the new object).
+    4. Return the new object.
+    
+    
+ACCESS VALUES
+• Steps to retrieve a value from a property of an object (such as Person.Name):
+    1. If a property with the given name exists on the object (instance),
+       return its value;
+       // blocks the value on the prototype.
+    2. Otherwise, go to the object’s prototype. If the property exists there,
+       return its value.
+       
+    e.g. 
+    function Person() {}
+    Person.prototype.name = "Nicholas";
+    
+    let person1 = new Person();
+    let person2 = new Person();
+    person1.name = "Greg";
+    console.log(person1.name); // "Greg" - from instance
+    console.log(person2.name); // "Nicholas" - from prototype
+    
+    // DELETE VALUE(S):
+    delete person1.name;
+    console.log(person1.name); // "Nicholas" - from the prototype
+    
+    
 
     
+    
+    
+       
+       
+
     
     
     
