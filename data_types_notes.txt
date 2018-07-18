@@ -66,6 +66,9 @@ BASIC ARRAY METHODS：
     var array2 = ['d', 'e', 'f'];
     console.log(array1.concat(array2));
     // ["a", "b", "c", "d", "e", "f"]
+// The concat() method is used to merge two or more arrays. 
+// This method does not change the existing arrays, 
+// but instead returns a new array.
     
     // The join() method joins all elements of an array (or an array-like object) 
     // into a string and returns this string.
@@ -73,6 +76,44 @@ BASIC ARRAY METHODS：
     console.log(elements.join());    // Fire,Wind,Rain
     console.log(elements.join(""));  // FireWindRain
     console.log(elements.join("-")); // Fire-Wind-Rain
+    
+The copyWithin() method shallow copies part of an array to another location in the same array and returns it, 
+without modifying its size.
+
+The fill() method fills all the elements of an array from a start index to an end index with a static value. 
+The end index is not included.
+
+The sort() method sorts the elements of an array in place and returns the array. 
+The sort is not necessarily stable. 
+The default sort order is according to string Unicode code points.
+The time and space complexity of the sort cannot be guaranteed as it is implementation dependent.
+    e.g.
+    var arr = [2,3,4,10,12];
+    
+    arr.sort();
+    [10, 12, 2, 3, 4]
+
+The indexOf() method returns the first index at which a given element can be found in the array, 
+or -1 if it is not present.
+
+The lastIndexOf() method returns the last index at which a given element can be found in the array, 
+or -1 if it is not present. 
+The array is searched backwards, starting at fromIndex. // The index at which to start searching backwards.
+
+The findIndex() method returns the index 
+of the first element in the array that satisfies the provided testing function. 
+Otherwise -1 is returned.
+
+The find() method returns the value 
+of the first element in the array that satisfies the provided testing function. 
+Otherwise undefined is returned.
+
+
+
+
+
+
+
       
       
       
