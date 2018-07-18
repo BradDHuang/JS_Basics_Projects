@@ -29,14 +29,23 @@ run(); // Same instance? true
 
 
 // ES5
+// constructor based implementation using JavaScript's closures.
+
+// Closures:
+// A func. that make use of Var.s defined in Outer func.s that have previously returned.
+
 function Singleton() {
-    var instance;
+    // var instance;
     Singleton = function() {
         return instance;
     }
-    Singleton.prototype = this;
-    instance = new Singleton();
-    instance.constructor = Singleton;
+    // Singleton.prototype = this;
+    var instance = new Singleton();
+    // instance.constructor = Singleton;
+    console.log(instance); // Singleton {}
+    
+// Only create A new instance for the 1st time.
+    
     return instance;
 }
 
