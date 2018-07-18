@@ -7,3 +7,10 @@ http://keycodes.atjayjo.com
 
 https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
 
+Regular Expressions:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+
+
+
+
