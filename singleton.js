@@ -74,6 +74,10 @@ console.log("Same instance? " + (ins1 === ins2));
 // Same instance? true
 
 
+// Ref:
+// https://anasshekhamis.com/2017/07/27/the-singleton-design-pattern-es5-and-es2015/
+
+
 
 
 
