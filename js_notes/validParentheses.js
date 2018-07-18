@@ -21,7 +21,6 @@ function braces(values) {
                 if (stack.length === 0 || stack.pop() !== e) {
                     
                     // res.push["NO"];
-                    
                     res.push("NO");
                     break;
                 }
@@ -30,7 +29,6 @@ function braces(values) {
         if (l === res.length) {
             
             // res.push["YES"];
-            
             res.push("YES");
         }
     }
