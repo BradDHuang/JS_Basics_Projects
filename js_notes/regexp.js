@@ -47,7 +47,7 @@ Not allowed – used to build pattern
 Any character in the class, within []
 • [...] - Any one character between the brackets.
 • [^...] - Any one character not between the brackets.
-• . -Any character except newline or another Unicode line terminator.
+• . - Any character except newline or another Unicode line terminator.
 • \w - Any ASCII word character. Equivalent to 
 [a-zA-Z0-9_].
 • \W - Any character that is not an ASCII word character. Equivalent to [^a-zA-Z0-9_].
@@ -100,3 +100,22 @@ To specify the matching position of the string
             but do not include those characters in the match.
 • (?! p ) - A negative lookahead assertion. Require that the following characters do not match the pattern p.
 */
+
+
+// Password check:
+
+// var str = "b3d456"; // false, A-Z
+// var str = "B3D456"; // false, a-z
+// var str = "bcdbcd"; // false, 0-9
+// var str = "b3d456()"; // false, 0-9a-zA-Z
+// var str = "b3d45"; // false, >= 6
+// var str = "b3d45678911"; // false, <= 10
+var str = "b3d456D"; // true
+
+function checkPassword(str) {
+    var res = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{6,10}$/;
+    return res.test(str);
+}
+console.log(checkPassword(str));
+
+
