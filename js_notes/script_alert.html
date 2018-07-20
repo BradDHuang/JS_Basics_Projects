@@ -1,0 +1,38 @@
+<html>
+<head>
+</head>
+<body>
+	<!-- <h1>Beginning</h1> -->
+	<!-- <script type="text/javascript"> -->
+		 <!--alert('Hello JavaScript!'); -->
+	<!-- </script> -->
+	<!-- <h1>Ending</h1> -->
+	<h1>Most modern browsers now wait until the script finishes 
+	before 
+	rendering the page. 
+	This is a change in the common behavior.</h1>
+	<p id='p1'>Line 1</p>
+	<script type='text/javascript'>
+	    document.write("<p>Line1 is null? " + (document.getElementById('p1') == null ? "yes" : "no") + "</p>");
+	    alert('Hello JavaScript!');
+	    document.write("<p>Line2 is null? " + (document.getElementById('p2') == null ? "yes" : "no") + "</p>");
+	</script>
+	<p id='p2'>Line 2</p>
+	<p> Line1 exists as of when the script runs, but Line2 doesn't.
+	</p>
+	<p> When the browser encounters a script tag when parsing the HTML, 
+		it stops parsing and hands over to the JS interpreter, which runs the script. 
+		Only when the script is complete does the browser resume parsing the page 
+		(because the script might do document.write calls to output markup that the parser should handle). 
+		This is the default behavior; 
+		there are script tag attributes that can prevent this (defer and async).
+	</p>
+	<p> Where it gets a bit tricky is interacting with the DOM, 
+		since the DOM is built up by the parser as it's doing its thing and your script may run 
+		before 
+		the DOM is completely ready to be manipulated. 
+		In general, if you only access elements that precede the script tag in the file, you're fine, 
+		but to be safe it's best to put off any DOM interactions until the DOM is fully built.
+	</p>
+</body>
+</html>
