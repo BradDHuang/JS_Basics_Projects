@@ -1,8 +1,22 @@
 
 
+// Promise 
+    // a built-in object type in ES2015
+
+
 // The Promise object 
 // represents the eventual completion (or failure) 
 // of an asynchronous operation, and its resulting value.
+/*
+PROMISE OBJECT
+• ‘Token’ or ‘Proxy’ or ‘Promise’
+• It contains resulting value, as a result.
+• Must be in one of these states:
+  • pending: initial state, not fulfilled or rejected.
+  • fulfilled: the operation completed successfully.
+  • rejected: the operation failed.
+• It is guaranteed that a promise object will either succeed or fail.
+*/
 
 
 // Promise Constructor:
@@ -50,11 +64,75 @@ p1.catch(function(error) {
 });
 // expected output: Uh-oh!
 
+/*
+then() takes success and failure callbacks,
+catch() takes failure callback Only.
+• both return a Promise to support chaining
+• “success callback” is passed a value of any kind
+• “failure callback” is passed a “reason” which can be any kind of value, 
+  but is typically an Error object or a string.
+*/
+
+/*
+PROMISE CHAIN：
+when one promise is fulfilled, you can have it immediately
+invoke another function that returns a promise … and so on.
+
+Without promises,
+using only callbacks,
+if an async function throws,
+the calling function cannot catch it,
+and the error is swallowed.
+*/
+
+/*
+The Promise.all(iterable) method 
+returns a single Promise 
+that resolves when all of the promises in the iterable argument have resolved 
+or when the iterable argument contains no promises. 
+It rejects with the reason of the first promise that rejects.
+*/
+// e.g.
+var promise1 = Promise.resolve(3);
+var promise2 = 42;
+var promise3 = new Promise(function(resolve, reject) {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then(function(values) {
+  console.log(values);
+});
+// expected output: Array [3, 42, "foo"]
 
 
+// EXCEPTION HANDLING
+// If an error is thrown inside a success or failure callback 
+// the promise returned by then is rejected
 
+// e.g.
+function asyncDouble(n) {
+    return new Promise((resolve, reject) => {
+        if (typeof n === 'number') {
+          resolve(n * 2);
+        } else {
+          reject(n + ' is not a number');
+        }
+        // in real usage, some asynchronous operation would happen above
+    });
+}
 
-
+let p = asyncDouble(3).then(
+    v => {
+    // This causes the promise returned by the call to then above to be rejected.
+    throw 'Did you see this?';
+    },
+    err => console.error('error:', err) // not reached
+); 
+p.then(
+    value => console.log('resolved with', value),
+    reason => console.log('rejected with', reason)
+);
+// Output is "rejected with Did you see this?"
 
 
 
