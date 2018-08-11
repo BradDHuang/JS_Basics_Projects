@@ -119,6 +119,7 @@ To specify the matching position of the string
 // var str = "b3d456()"; // false, 0-9a-zA-Z
 // var str = "b3d45"; // false, >= 6
 // var str = "b3d45678911"; // false, <= 10
+/*
 var str = "b3d456D"; // true
 
 function checkPassword(str) {
@@ -126,5 +127,21 @@ function checkPassword(str) {
     return res.test(str);
 }
 console.log(checkPassword(str));
+*/
+
+
+// https://regexr.com/
+
+/*
+e.g. match Even (a,c) or (b,d):
+
+/^(?=(?:(?:[ac]*[bd]){2})*[ac]*$)(?:(?:[bd]*[ac]){2})*[bd]*$/g
+*/
+
+// (?:x)
+// Matches x but does not remember the match. These are called non-capturing groups.
+
+
+
 
 
