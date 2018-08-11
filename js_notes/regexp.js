@@ -102,6 +102,15 @@ To specify the matching position of the string
 */
 
 
+// match a word boundary:
+
+// For example, /b/ matches the character "b". 
+// By placing a backslash in front of "b", that is by using /\b/, 
+// the character becomes special to mean match a word boundary.
+// e.g.
+    // test: /\.js$/,
+
+
 // Password check:
 
 // var str = "b3d456"; // false, A-Z

@@ -2,6 +2,7 @@
 // notes
 
 this:
+// review
 1 - Global Context, when "this" is not inside a declared obj.
     e.g. var person = "Brad" // undefined
          window.person // "Brad"
