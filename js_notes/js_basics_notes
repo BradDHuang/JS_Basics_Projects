@@ -99,6 +99,16 @@ from a high-level programming language to a lower level language
 (e.g., assembly language, object code, or machine code) 
 to create an executable program.
 
+
+A web browser (commonly referred to as a browser) 
+is a software application for accessing information on the World Wide Web. 
+Each individual web page, image, and video is identified by a distinct URL, 
+enabling browsers to retrieve and display them on the user's device.
+
+The purpose of a web browser 
+is to fetch information resources and display them on a user's device.
+// It can interpret JS/HTML.
+
     
          
     
