@@ -85,9 +85,20 @@ Truthy & Falsy values:
     if (-Infinity)
     
     
+A scripting or script language 
+is a programming language that supports scripts: 
+programs written for a special run-time environment 
+that automate the execution of tasks 
+that could alternatively be executed one-by-one by a human operator. 
 
+Scripting languages are often interpreted (rather than compiled). 
     
-        
+The compiler 
+is primarily used for programs that translate source code 
+from a high-level programming language to a lower level language 
+(e.g., assembly language, object code, or machine code) 
+to create an executable program.
+
     
          
     
