@@ -4,6 +4,30 @@
 
 JavaScript data types and data structures:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+7 data types:
+6 data types that are primitives:
+    Boolean
+    Null
+    Undefined
+    Number
+    String
+    Symbol (new in ECMAScript 6)
+    
+and Object:
+// In computer science, an object is a value in memory which is possibly referenced by an identifier.
+    Properties
+// In JavaScript, objects can be seen as a collection of properties. 
+    "Normal" objects, and functions
+// A JavaScript object is a mapping between keys and values. 
+// Functions are regular objects with the additional capability of being callable.
+    Dates
+// When representing dates, the best choice is to use the built-in Date utility in JavaScript.
+    Indexed collections: Arrays (and typed Arrays)
+// Arrays are regular objects for which there is a particular relationship between integer-key-ed properties and the 'length' property. 
+// Additionally, arrays inherit from Array.prototype which provides to them a handful of convenient methods to manipulate arrays. 
+    Keyed collections: Maps, Sets(, WeakMaps, WeakSets)
+    Structured data: JSON
+    More objects in the standard library // JavaScript has a standard library of built-in objects. 
 
 var vs. let:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
