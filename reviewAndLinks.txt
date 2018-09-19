@@ -9,6 +9,17 @@ var vs. let:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var
 
+The let statement declares a block scope local variable, optionally initializing it to a value.
+unlike the var keyword, 
+which defines a variable globally, or locally to an entire function regardless of block scope.
+
+var declarations, 
+wherever they occur, 
+are processed before any code is executed. 
+// This is called hoisting,
+// as it appears that the variable declaration is moved to the top of the function or global code.
+// Undeclared variables are always global.
+
 Hoisting:
 https://developer.mozilla.org/en-US/docs/Glossary/Hoisting
 
