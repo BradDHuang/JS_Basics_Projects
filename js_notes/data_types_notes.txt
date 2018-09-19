@@ -4,13 +4,21 @@ DATA TYPE - NULL & UNDEFINED
 • Both have one possible value:
     • null
     • undefined
+    // The global undefined property represents the primitive value undefined. 
+    // It is one of JavaScript's primitive types.
 
 • Both represent something that doesn’t exist.
+// A variable that has not been assigned a value is of type undefined. 
+// A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. 
+// A function returns undefined if a value was not returned.
 
 • Difference:
     • null is usually available to programmers.
     • undefined should be reserved for JavaScript itself, 
       to indicate that something hasn’t been given a value yet.
+    // You can use undefined and the strict equality and inequality operators to determine whether a variable has a value.
+    // e.g. Run console.log() from the Chrome console, 
+    // it prints out the return val. (undefined)
       
       
 DATA TYPE - ARRAYS
