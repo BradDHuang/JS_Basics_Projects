@@ -22,6 +22,8 @@ DATA TYPE - NULL & UNDEFINED
       
       
 DATA TYPE - ARRAYS
+// The JavaScript Array object is a global object that is used in the construction of arrays; 
+// which are high-level, list-like objects.
 
 • An ordered collection of values/elements
 • Each ele. has a numeric position in the array
