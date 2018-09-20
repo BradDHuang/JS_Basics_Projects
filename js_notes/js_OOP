@@ -66,6 +66,8 @@ linking the object and the prototype property of the constructor func.
     Person.prototype.constructor // ƒ Person(name) { this.name = name; }
     Person.prototype.constructor === Person // true
     
+// Object Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+    
 prototype:
     the prototype is Shared among ALL objects created by that constructor func.
     e.g.
