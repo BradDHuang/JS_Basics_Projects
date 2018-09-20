@@ -69,6 +69,13 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extend
 
 Function.prototype:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype
+// The Function.prototype property represents the Function prototype object.
+
+// ***Function objects inherit from Function.prototype.***  
+
+// Function.prototype cannot be modified.
+// e.g. Function.prototype.apply() // function.apply(thisArg, [argsArray])
+
 
 Destructuring assignment:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
