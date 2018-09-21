@@ -151,6 +151,17 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 Destructuring assignment:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
 
+The destructuring assignment syntax is a JavaScript expression 
+that makes it possible to unpack values from arrays, 
+or properties from objects, into distinct variables.
+// on the left-hand side of the assignment to define what values to unpack from the sourced variable.
+// e.g. 
+    var a, b, rest;
+    [a, b, ...rest] = [10, 20, 30, 40, 50];
+    console.log(rest);
+    // expected output: [30, 40, 50]
+    
+
 RegExp:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 
