@@ -165,6 +165,20 @@ or properties from objects, into distinct variables.
 RegExp:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 
+The RegExp constructor 
+creates a regular expression object 
+for matching text 
+with a pattern.
+// There are 2 ways to create a RegExp object: 
+// (1) a literal notation; (2) a constructor. 
+// e.g. 
+    /ab+c/i;
+    new RegExp('ab+c', 'i');
+    new RegExp(/ab+c/, 'i');
+    
+// https://regexr.com/
+
+
 Promise:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
