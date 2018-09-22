@@ -6,7 +6,9 @@
 
 // The Promise object 
 // represents the eventual completion (or failure) 
-// of an asynchronous operation, and its resulting value.
+// of an asynchronous operation, 
+and its resulting value.
+
 /*
 PROMISE OBJECT
 • ‘Token’ or ‘Proxy’ or ‘Promise’
@@ -28,8 +30,14 @@ console.log(promise1);
 
 
 // axios:
-
 // Promise based HTTP client for the browser and node.js
+
+// HTTP (Hypertext Transfer Protocol) 
+// is a communication protocol 
+// used to send data from one program to another over the internet. 
+// At one end of the data transfer is a server 
+// and at the other end is a client. 
+// The client is often browser-based, but might also be a standalone program.
 
 
 /*
@@ -66,6 +74,7 @@ p1.catch(function(error) {
 
 /*
 then() takes success and failure callbacks,
+
 catch() takes failure callback Only.
 • both return a Promise to support chaining
 • “success callback” is passed a value of any kind
@@ -78,7 +87,9 @@ PROMISE CHAIN：
 when one promise is fulfilled, you can have it immediately
 invoke another function that returns a promise … and so on.
 
+
 Without promises,
+
 using only callbacks,
 if an async function throws,
 the calling function cannot catch it,
