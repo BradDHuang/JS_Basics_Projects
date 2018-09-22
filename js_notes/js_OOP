@@ -283,6 +283,7 @@ ACCESS VALUES
     let person2 = new Person();
     person1.name = "Greg";
     console.log(person1.name); // "Greg" - from instance
+    
     console.log(person2.name); // "Nicholas" - from prototype
     
     // DELETE VALUE(S):
