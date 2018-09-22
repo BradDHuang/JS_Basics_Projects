@@ -11,12 +11,15 @@ String split()
     Tip: If an empty string ("") is used as the separator, the string is split between each character.
     Note: The split() method does not change the original string.
     
+    
 Accessing JavaScript Properties:
-    objectName.property          // person.age
+// 3 ways
+
+    objectName.property          // e.g. person.age
     
-    objectName["property"]       // person["age"]
+    objectName["property"]       // e.g. person["age"]
     
-    objectName[expression]       // x = "age"; person[x]
+    objectName[expression]       // e.g. x = "age"; person[x]
 
 
 
