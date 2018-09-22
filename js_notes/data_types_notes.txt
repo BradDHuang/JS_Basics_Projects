@@ -35,41 +35,55 @@ DATA TYPE - ARRAYS
 BASIC ARRAY METHODS：
 
     var arr = [0];
+    
     arr.push(-1);
     console.log(arr); // [0, -1]
+    
     arr.forEach((ele) => {
         console.log(ele);
     });
+    
     // The unshift() method adds one or more elements 
     // to the beginning of an array and returns the new length of the array.
-    console.log(arr.unshift(4, 2)); // 4
+    console.log(arr.unshift(4, 2)); 
+    // 4 (the new length of the array)
     console.log(arr); // [4, 2, 0, -1]
+    
     // The shift() method removes the first element from an array 
     // and returns that removed element. This method changes the length of the array.
-    console.log(arr.shift()); // 4
+    console.log(arr.shift()); 
+    // 4 (the removed element)
     console.log(arr); // [2, 0, -1]
     
     arr.sort();
     console.log(arr); // [-1, 0, 2]
+    
     arr.reverse();
     console.log(arr); // [2, 0, -1]
+    
     arr.pop();
     console.log(arr); // [2, 0]
+    
     console.log(arr.toString());
     
-    // The slice() method returns a shallow copy of a portion of an array 
-    // into a new array object selected from begin to end (end not included). 
+    // The slice() method returns 
+    // a shallow copy of a portion of an array 
+    // into a new array object selected from begin to end 
+    // (end not included). 
     // The original array will not be modified.
     var animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
     console.log(animals.slice(2)); // ["camel", "duck", "elephant"]
     console.log(animals.slice(2, 4)); // ["camel", "duck"]
     
-    // The splice() method changes the contents of an array 
+    // The splice() method 
+    // changes the contents of an array 
     // by removing existing elements and/or adding new elements.
     var months = ['Jan', 'March', 'April', 'June'];
-    months.splice(1, 0, "Feb"); // inserts at 1st index position
+    months.splice(1, 0, "Feb"); 
+    // inserts at 1st index position
     console.log(months); // ["Jan", "Feb", "March", "April", "June"]
-    months.splice(4, 1, "May"); // replaces 1 element at 4th index
+    months.splice(4, 1, "May"); 
+    // replaces 1 element at 4th index
     console.log(months); // ["Jan", "Feb", "March", "April", "May"]
     
     var array1 = ['a', 'b', 'c'];
@@ -78,12 +92,14 @@ BASIC ARRAY METHODS：
     // ["a", "b", "c", "d", "e", "f"]
 // The concat() method is used to merge two or more arrays. 
 // This method does not change the existing arrays, 
-// but instead returns a new array.
+// but instead returns 
+// a new array.
     
     // The join() method joins all elements of an array (or an array-like object) 
     // into a string and returns this string.
     var elements = ['Fire', 'Wind', 'Rain'];
-    console.log(elements.join());    // Fire,Wind,Rain
+    console.log(elements.join());    
+    // Fire,Wind,Rain
     console.log(elements.join(""));  // FireWindRain
     console.log(elements.join("-")); // Fire-Wind-Rain
     
@@ -95,13 +111,14 @@ The end index is not included.
 
 The sort() method sorts the elements of an array in place and returns the array. 
 The sort is not necessarily stable. 
-The default sort order is according to string Unicode code points.
+// The default sort order 
+// is according to string Unicode code points.
 The time and space complexity of the sort cannot be guaranteed as it is implementation dependent.
     e.g.
     var arr = [2,3,4,10,12];
     
     arr.sort();
-    [10, 12, 2, 3, 4]
+    // [10, 12, 2, 3, 4]
 
 The indexOf() method returns the first index at which a given element can be found in the array, 
 or -1 if it is not present.
@@ -128,8 +145,8 @@ e.g.
     });
     
     
-The map() method creates a 
-new array 
+The map() method creates 
+a new array 
 with the results of calling a provided function 
 on every element in the calling array.
 e.g.
@@ -141,11 +158,13 @@ e.g.
     // expected output: Array [2, 8, 18, 32]
     
 Return value:
-A new array with each element being the result of the callback function.
+A new array 
+with each element being the result of the callback function.
 
 
-The filter() method creates a new array with all elements 
-that pass the test implemented by the provided function.
+The filter() method creates 
+a new array 
+with all elements that pass the test implemented by the provided function.
 e.g. 
     var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 
