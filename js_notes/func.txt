@@ -80,6 +80,7 @@ FUNCTION EXPRESSION
 
     • Behaves almost the same as function declaration, 
       but NO hoisting
+      
     e.g.
     notHoisted(); // TypeError: notHoisted is not a function
     var notHoisted = function() {
