@@ -7,16 +7,23 @@ console.log(f(5)); // 8
 // console.log(x); // ReferenceError: x is not defined
 
 3 TYPES OF SCOPING
+
     • Global Scope
+    
         • Objects declared outside of any function
         • Visible everywhere in a JS program
         • Use without declaring – not allowed under ‘strict’ mode
+        
     • Function Scope
+    
         • Objects declared inside a function
         • Keyword ‘var’
+        
     • Block Scope
+    
         • Objects declared inside a block e.g. a for-loop
         • Keywords ‘let’ and ‘const’
+        
         
 // Declare an immutable variable in block scope
 // • must be initialized
