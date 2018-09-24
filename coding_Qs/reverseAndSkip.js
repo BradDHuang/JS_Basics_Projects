@@ -25,9 +25,10 @@ function reverseAndSkip(str) {
                 count = 1;
                 cur = newStr[i];
             }
-            if (i === str.length - 1) {
-                res += newStr[i];
-            }
+            
+        }
+        if (i === str.length - 1) {
+            res += cur; // cases like "bbccccbdd", "bb" should be added. 
         }
     }
     return res;
