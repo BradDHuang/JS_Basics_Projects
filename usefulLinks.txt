@@ -25,6 +25,24 @@ in a web search engine's unpaid results
 // https://moz.com/beginners-guide-to-seo
 
 
+https://www.keycdn.com/blog/front-end-optimization/
+
+https://www.circlesstudio.com/blog/improve-website-page-load-speed/
+    // e.g.
+        Enabling browser caching
+        LazyLoading images and video
+        Minifying resources (HTML, CSS, JS)
+        Removing query strings from static resources
+        Combining files (Google fonts, CSS, JS)
+        Optimizing the database
+        Loading CSS files asynchronously
+        Loading JS files deferred
+        
+        
+        
+        
+
+
 
 
 
