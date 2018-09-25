@@ -39,6 +39,32 @@ https://www.circlesstudio.com/blog/improve-website-page-load-speed/
         Loading JS files deferred
         
         
+https://gruntjs.com/
+
+Grunt 
+is a JavaScript task runner, 
+a tool used to automatically perform frequent tasks 
+such as minification, compilation, unit testing, and linting. 
+
+
+https://gulpjs.com/
+
+Gulp
+It is a task runner 
+built on Node.js and npm, 
+used for automation of time-consuming and repetitive tasks involved in web development 
+like minification, concatenation, cache busting, unit testing, linting, optimization, etc.
+
+
+https://www.atlassian.com/software/jira
+
+Jira 
+is a proprietary issue tracking product 
+// developed by Atlassian 
+which allows bug tracking 
+and agile project management. 
+        
+        
         
         
 
