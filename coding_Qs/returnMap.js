@@ -13,7 +13,7 @@ function double(param) {
 let map = new Map();
 
 function returnMap(array) {
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < array.length; i++) {
         map.set(array[i], double(array[i]));
     }
     return map;
