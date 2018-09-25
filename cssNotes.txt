@@ -37,6 +37,36 @@ and run on the client side or server side.
 // http://lesscss.org/usage/
 
 
+CSS: 
+What is the difference between 'resetting' and 'normalizing' CSS? 
+Which would you choose and why?
+
+CSS resets 
+aim to remove all built-in browser styling. 
+Standard elements like h1 - h6, p, strong, em end up looking exactly alike, 
+having no decoration at all. 
+// You're then supposed to add all decoration yourself.
+Resetting: 
+Removing all styling from every element - margins, padding, etc. 
+All elements will have the same font-size, same line-height and no spacing. 
+
+Normalize.css 
+aims to make built-in browser styling consistent across browsers. 
+Elements like h1 - h6 will appear bold, larger et cetera 
+in a consistent way across browsers. 
+// You're then supposed to add only the difference in decoration your design needs.
+
+Normalizing: 
+Making elements render consistently across browsers. 
+So all h1s will have the same size across browsers, for instance. 
+
+I personally prefer normalizing over resetting. 
+There's no point in resetting everything 
+only to style it again.
+
+
+
+
 
 
 
