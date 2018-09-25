@@ -4,9 +4,9 @@
     // a built-in object type in ES2015
 
 
-// The Promise object 
-// represents the eventual completion (or failure) 
-// of an asynchronous operation, 
+The Promise object 
+represents the eventual completion (or failure) of 
+an asynchronous operation, 
 and its resulting value.
 
 /*
@@ -22,6 +22,7 @@ PROMISE OBJECT
 
 
 // Promise Constructor:
+
 var promise1 = new Promise(function(resolve, reject) {
   setTimeout(resolve, 100, 'foo');
 });
@@ -30,6 +31,7 @@ console.log(promise1);
 
 
 // axios:
+
 // Promise based HTTP client for the browser and node.js
 
 // HTTP (Hypertext Transfer Protocol) 
@@ -42,9 +44,13 @@ console.log(promise1);
 
 /*
 The then() method 
+
 returns a Promise. 
+
 It takes up to 2 arguments: 
+
     1. callback functions for the success 
+    
     2. failure cases of the Promise.
 */   
 // e.g.
@@ -60,6 +66,7 @@ p.then(function(value) {
 The catch() method 
 returns a Promise 
 and deals with rejected cases only. 
+
 It behaves the same as calling Promise.prototype.then(undefined, onRejected) 
 (in fact, calling obj.catch(onRejected) internally calls obj.then(undefined, onRejected)).
 */
@@ -88,12 +95,12 @@ when one promise is fulfilled, you can have it immediately
 invoke another function that returns a promise … and so on.
 
 
-Without promises,
+    Without promises,
 
-using only callbacks,
-if an async function throws,
-the calling function cannot catch it,
-and the error is swallowed.
+    using only callbacks,
+    if an async function throws,
+    the calling function cannot catch it,
+    and the error is swallowed.
 */
 
 /*
