@@ -29,6 +29,24 @@
 
 // A property of an object can also refer to a function, which is called a method.
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+// arguments is an Array-like object 
+// accessible inside functions that contains the values of the arguments passed to that function.
+
+// “Array-like” 
+// means that arguments has a length property and properties indexed from zero, 
+// but it doesn't have Array's built-in methods like forEach and map. 
+
+// e.g.
+    function sum() {
+        var sum = 0;
+        for (let i = 0; i < arguments.length; i++) {
+            sum += parseInt(arguments[i]);
+        }
+        return sum;
+    }
+    console.log(sum(1, 2, 4)); // 7
+
 
 (2) CREATING OBJECT (INSTANCE)
     (a) object literal
