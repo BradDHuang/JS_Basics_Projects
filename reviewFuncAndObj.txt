@@ -64,6 +64,46 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/argu
         b; // 2
         c; // 3
         d; // ReferenceError: "d" is not defined
+        
+(4) FUNCTION CLOSURES
+    // Through the nesting of functions.
+        It grants the inner function full access 
+        to all the variables and functions 
+        defined inside the outer function.
+        // The outer function does not have access to the variables and functions defined inside the inner function.
+
+    A closure 
+    is created when the inner function is made available 
+    to any scope outside the outer function.
+    
+    // Small pitfall:
+        // If an enclosed function defines a variable with the same name as the name of a variable in the outer scope.
+            // There is no way to refer to the variable in the outer scope again!
+
+    // e.g.
+        var firstf = function () {
+            var counter = 0;
+            return function () {
+                return counter += 1;
+            }
+        }
+        var add = firstf();
+        add();
+        add();
+        add(); // 3
+
+// POTENTIAL RISK – CLOSURE IN A LOOP
+https://stackoverflow.com/questions/750486/javascript-closure-inside-loops-simple-practical-example
+
+// the problem is that the variable i, 
+// within each of the anonymous functions, 
+// is bound to the same variable outside of the function.
+
+// vs. using "let", instead of "var".
+
+
+
+
 
 
 
