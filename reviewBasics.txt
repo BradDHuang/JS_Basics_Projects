@@ -34,7 +34,21 @@ for (let value of iterable) {
 // A for...in loop only iterates over enumerable, non-Symbol properties. 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
 
+(3) Array.prototype.entries()
+The entries() method 
+returns a new Array Iterator object 
+that contains the key/value pairs 
+for each index in the array.
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries
+
+// e.g.
+var a = ['a', 'b', 'c'];
+var iterator = a.entries();
+for (let e of iterator) {
+  console.log(e);
+}
+// [0, 'a'] ... 
 
 
 
