@@ -5,6 +5,35 @@
     var is function scope;
     let and const are block scope.
     
+(2) More about for-loop
+for (statement 1; statement 2; statement 3) {
+    code block to be executed
+}
+
+// Statement 1 is executed (one time) before the execution of the code block.
+// Statement 2 defines the condition for executing the code block.
+// Statement 3 is executed (every time) after the code block has been executed.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of
+
+    for (variable of iterable) {
+      statement
+    }
+    
+// e.g.
+// Iterating over a String
+
+let iterable = 'boo';
+for (let value of iterable) {
+  console.log(value);
+}
+// "b"
+// "o"
+// "o"
+
+// A for...in loop only iterates over enumerable, non-Symbol properties. 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in
+
 
 
 
