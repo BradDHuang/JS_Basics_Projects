@@ -50,6 +50,31 @@ for (let e of iterator) {
 }
 // [0, 'a'] ... 
 
+(4) Scope
+The current context of execution. 
+The context in which values and expressions are "visible," or can be referenced. 
+// If a variable or other expression is not "in the current scope," then it is unavailable for use. 
+
+A function serves as a closure in JavaScript, 
+and thus creates a scope, 
+so that (for example) a variable defined exclusively within the function 
+cannot be accessed from outside the function or within other functions.
+
+Global Scope
+    Objects declared outside of any function are global;
+    Visible everywhere in a JavaScript program;
+    Use it without declaring – not allowed under ‘strict’ mode.
+Function Scope // "var"
+Block Scope // "let / const"
+// Function arguments (parameters) work as local variables inside functions.
+// Local variables have local scope: They can only be accessed within the function.
+
+// "const", must be initialized
+// "let", not hoisted 
+
+
+
+
 
 
 
