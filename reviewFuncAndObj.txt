@@ -1,5 +1,5 @@
 
-// this file is created to review JS functions.
+// this file is created to review JS functions & objects.
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
 
@@ -28,6 +28,26 @@
 // Function names are normal variables
 
 // A property of an object can also refer to a function, which is called a method.
+
+
+(2) CREATING OBJECT (INSTANCE)
+    (a) object literal
+    (b) “new” keyword
+    (c) Object.create()
+    
+(3) DESTRUCTURING ASSIGNMENT
+    Split (“destructure”) a composite object into individual variables.
+    // Object destructuring 
+    // Array destructuring
+    // e.g.
+        const obj = { b: 2, c: 3, d: 4 };
+        const {a, b, c} = obj; // object destructuring assignment
+        a; // undefined (there was no "a" in obj)
+        b; // 2
+        c; // 3
+        d; // ReferenceError: "d" is not defined
+
+
 
 
 
