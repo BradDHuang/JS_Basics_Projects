@@ -1,0 +1,46 @@
+
+// this file is created to review JS functions.
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+
+(1) DEFINING FUNCTIONS
+    // (a) Function Constructor
+        // Inherits global scope
+        // Slowest, should be avoided
+        e.g. let multiply = new Function(‘x’, ‘y’, ‘return x * y’);
+
+    (b) Function Declaration
+        Inherits current scope
+        e.g. function multiply(x, y) {
+                 return x * y;
+             }
+        // Will return undefined if no return statement
+        // allows ‘Hoisting’
+
+    (c) Function Expression
+        (Can be) Anonymous function
+        Variable assignment
+        e.g. let multiply = function(x, y) {
+                 return x * y;
+             };
+        // No hoisting
+             
+// Function names are normal variables
+
+// A property of an object can also refer to a function, which is called a method.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
