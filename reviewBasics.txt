@@ -72,6 +72,18 @@ Block Scope // "let / const"
 // "const", must be initialized
 // "let", not hoisted 
 
+(5) Hoisting
+// A variable can be declared after it has been used.
+
+Hoisting is to move all declarations to the top of the current scope.
+
+// only hoists declarations, not initializations, 
+// meaning the initialization statement is splitted into 2 parts. // (declaration part and assignment part)
+// e.g.
+    console.log(num); // Returns undefined 
+    var num = 6;
+// Only works for function scope.
+
 
 
 
