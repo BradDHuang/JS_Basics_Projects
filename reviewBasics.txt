@@ -84,7 +84,14 @@ Hoisting is to move all declarations to the top of the current scope.
     var num = 6;
 // Only works for function scope.
 
+(6) "use strict"
+The purpose of "use strict" is to indicate that the code should be executed in "strict mode".
+// With strict mode, you can not, for example, use undeclared variables.
 
+(7) Deep / Shallow copy
+In JS, they are managed automatically by the engine:
+    Deep copy: simple data types (number, string, Boolean);
+    Shallow copy: array, object, and function.
 
 
 
