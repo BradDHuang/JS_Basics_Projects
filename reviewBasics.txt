@@ -1,0 +1,23 @@
+
+// this file contains JS basics for review purpose.
+
+(1) var vs. let / const
+    var is function scope;
+    let and const are block scope.
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
