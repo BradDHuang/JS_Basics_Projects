@@ -163,6 +163,28 @@ arr.reduce(callback[, initialValue])
     to another object 
     from which properties are inherited.
     
+    // Every variable can be considered as object
+
+(9) ES6
+    ES6 created OOP syntax.
+    // e.g.
+    class
+    extends
+    super
+    // In subclasses, constructor must call super(args) 
+    // and it must be before this is accessed.
+    // because the highest superclass creates the object.
+    
+    The get syntax 
+        binds an object property to a function that will be called when that property is looked up.
+    The set syntax 
+        binds an object property to a function to be called when there is an attempt to set that property.
+    // e.g.
+    get property() {},
+    set property(value) {}
+    
+
+    
 
 
 
