@@ -102,6 +102,37 @@ https://stackoverflow.com/questions/750486/javascript-closure-inside-loops-simpl
 // vs. using "let", instead of "var".
 
 
+(5) ARROW FUNCTIONS
+    • Introduced in ES2015
+    • Simplify syntax in 3 ways:
+        • Omit the word function;
+        • Omit the parentheses If the function takes a single argument;
+        • Omit curly braces and the return statement if function is a single expression.
+    • Always anonymous
+    
+(6) Array.prototype.reduce()
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
+
+The reduce() method 
+executes a reducer function (that you provide) 
+on each member of the array resulting in a single output value.
+
+arr.reduce(callback[, initialValue])
+
+// e.g.
+    const array1 = [1, 2, 3, 4];
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
+    
+    console.log(array1.reduce(reducer)); // 1 + 2 + 3 + 4
+    // expected output: 10
+    
+    console.log(array1.reduce(reducer, 5)); // 5 + 1 + 2 + 3 + 4
+    // expected output: 15
+
+
+
+
 
 
 
