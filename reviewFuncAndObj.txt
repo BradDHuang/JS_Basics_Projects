@@ -110,6 +110,8 @@ https://stackoverflow.com/questions/750486/javascript-closure-inside-loops-simpl
         • Omit curly braces and the return statement if function is a single expression.
     • Always anonymous
     
+    // if expression is an object literal, wrap it in parens to distinguish it from a block of code.
+    
 (6) Array.prototype.reduce()
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce
@@ -129,6 +131,14 @@ arr.reduce(callback[, initialValue])
     
     console.log(array1.reduce(reducer, 5)); // 5 + 1 + 2 + 3 + 4
     // expected output: 15
+
+(7) THIS KEYWORD
+    this is a special read-only reference inside a function.
+    
+    When methods are called, it takes on the value of the specific object it was called on.
+    Bound how the function is called, 
+    Not where the function is declared.
+    
 
 
 
