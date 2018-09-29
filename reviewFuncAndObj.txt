@@ -152,7 +152,18 @@ arr.reduce(callback[, initialValue])
 
     To pass the value of this from one context to another, use call, or apply.
     
+(8) Object 
+    is a container that can represent real world things    
+    It can contain properties
+    It can also contain functions
+    They are all instances of Object class.
     
+    prototype 
+    is a reference 
+    to another object 
+    from which properties are inherited.
+    
+
 
 
 
