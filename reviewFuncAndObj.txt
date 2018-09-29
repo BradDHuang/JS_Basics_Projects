@@ -139,6 +139,20 @@ arr.reduce(callback[, initialValue])
     Bound how the function is called, 
     Not where the function is declared.
     
+    In strict mode, however, the value of this 
+    remains at whatever it was set to when entering the execution context, 
+    so, in the following case, this will default to undefined:
+        function f2() {
+          'use strict'; // see strict mode
+          return this;
+        }
+        
+        f2() === undefined; // true
+    So, in strict mode, if this was not defined by the execution context, it remains undefined.
+
+    To pass the value of this from one context to another, use call, or apply.
+    
+    
 
 
 
