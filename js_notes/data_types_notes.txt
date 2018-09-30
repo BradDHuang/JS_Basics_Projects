@@ -26,6 +26,7 @@ DATA TYPE - ARRAYS
 // which are high-level, list-like objects.
 
 • An ordered collection of values/elements
+
 • Each ele. has a numeric position in the array
 • 0-based index: 1st ele. in the array is ele. with index 0
 • Size is not fixed; add or remove elements at any time
@@ -36,12 +37,13 @@ BASIC ARRAY METHODS：
 
     var arr = [0];
     
-    arr.push(-1);
+    arr.push(-1); // return value: the new length.
     console.log(arr); // [0, -1]
     
     arr.forEach((ele) => {
         console.log(ele);
     });
+    // Does not make a copy of the array before iterating.
     
     // The unshift() method adds one or more elements 
     // to the beginning of an array and returns the new length of the array.
@@ -61,7 +63,7 @@ BASIC ARRAY METHODS：
     arr.reverse();
     console.log(arr); // [2, 0, -1]
     
-    arr.pop();
+    arr.pop(); // return value: the removed element.
     console.log(arr); // [2, 0]
     
     console.log(arr.toString());
@@ -187,6 +189,13 @@ e.g.
     // 5 + 1 + 2 + 3 + 4
     console.log(array1.reduce(reducer, 5));
     // expected output: 15
+    
+    // If no initial value is supplied, the first element in the array will be used. 
+    // Calling reduce() on an empty array without an initial value is an error.
+    
+map() vs. reduce()
+// reduce transforms the entire array
+// while map transfers elements individually
     
     
 
