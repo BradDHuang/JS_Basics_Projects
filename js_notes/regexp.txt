@@ -1,9 +1,9 @@
 
 
-// RegExp
+RegExp
+// Provide sophisticated string matching functionality.
 
-
-const re1 = /going/;
+const re1 = /going/; // a special literal syntax
 const re2 = new RegExp("going"); // equivalent object constructor
 
 const input = "As I was going to Saint Ives";
