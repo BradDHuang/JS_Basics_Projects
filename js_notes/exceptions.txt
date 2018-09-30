@@ -9,11 +9,16 @@
 • Exception handling is a mechanism that deals with errors in a controlled fashion (no crash).
 
 • Not error handling because it’s meant to deal with exceptional circumstances — that is:
-• not the errors anticipated, such as invalid email address,
-• but the ones aren’t, such as server is not working.
+
+    • not the errors anticipated, such as invalid email address,
+    • but the ones aren’t, such as server is not working.
 */
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/message
+// https://developer.mozilla.org/en-US/docs/Web/API/Console/error
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error/stack
 // Call Stack:
 
 function a() {
@@ -46,6 +51,7 @@ a: calling b
 b: calling c
 c: throwing error
 Error: c error
+...
 */
 
 
