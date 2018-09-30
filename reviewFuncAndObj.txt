@@ -183,6 +183,50 @@ arr.reduce(callback[, initialValue])
     get property() {},
     set property(value) {}
     
+(10) PROTOTYPE PATTERN
+    Each function is created with a prototype property, 
+    which is an object 
+    containing properties and functions that should be available 
+    to all instances 
+    of a particular reference class (function).
+    
+    // e.g.
+        function Person() {}
+        Person.prototype.name = “Nicholas”;
+    
+    Steps to retrieve a value from a property of an object (such as Person.Name):
+    1. If a property with the given name exists on the object (instance),
+        return its value; // shallow or block the value on the prototype.
+    2. Otherwise, go to the object’s prototype. If the property exists there,
+        return its value.
+        
+    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+    The JavaScript delete operator 
+    removes a property from an object (instance); 
+    if no more references to the same property are held, it is eventually released automatically.
+    // e.g.
+    let person1 = new Person();
+    person1.name = “Greg”;
+    delete person1.name;
+    
+(11) INHERITANCE
+    It is achieved via ‘Prototype Chaining’ 
+    because the properties and methods in a prototype 
+    is ‘inherited’ to its instances.
+    
+    As JavaScript works with objects, not classes, 
+    create an instance using the new Shape() constructor 
+    which inherits its properties;
+    don't inherit from Shape() directly. 
+    // e.g.
+        TwoDShape.prototype = new Shape();
+    
+    
+
+    
+
+
+    
 
     
 
