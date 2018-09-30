@@ -7,6 +7,12 @@
 
 // • Later is built on top of previous
 
+// A callback function is a function passed into another function as an argument
+
+// A callback is simply a function 
+// that will be invoked at some point in the future 
+// when an async function is completed.
+
 
 console.log("Before timeout: " + new Date());
 function f() {
