@@ -1,8 +1,9 @@
 
 
-MODULES (IN ES2015)
+MODULES (IN ES2015/ES6)
 
-• Module: a single, entire JS file and can be imported by another
+• Module: 
+    a single, entire JS file and can be imported by another
 
 • A module file might contain a class definition, a set of related classes, 
     a library of utility functions, or just a script of code to execute
@@ -16,6 +17,17 @@ MODULES (IN ES2015)
 • Enables APIs to be defined in modules instead of global variables
 
 • Different from node.js’ require()
+// require:
+    1. You can have dynamic loading where the loaded module name isn't predefined /static, 
+       or where you conditionally load a module only if it's "truly required" (depending on certain code flow).
+    2. Loading is synchronous. 
+       That means if you have multiple requires, they are loaded and processed one by one.
+
+ES6 import:
+    1. You can use named imports to selectively load 
+       only the pieces you need. 
+       That can save memory.
+    2. Import can be asynchronous (and in current ES6 Module Loader, it in fact is) and can perform a little better.
 
 
 MODULES - EXPORT
@@ -48,6 +60,8 @@ MODULES - IMPORT
     • import default-name, {name1, name2, ...} from 'module-path';
 • To import a module only for its side effects
     • import 'module-path';
+    
+// ES2015 module system is used in ReactJS.
     
 
 
