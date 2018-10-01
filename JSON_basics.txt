@@ -2,6 +2,14 @@
 
 JSON (JavaScript Object Notation)
 
+// JSON is a text-based data format following JavaScript object syntax
+// JSON exists as a string — useful when you want to transmit data across a network. 
+
+// Converting a string to a native object is called 
+// parsing, 
+// while converting a native object to a string so it can be transmitted across the network is called 
+// stringification.
+
 // A Simplified Form of XML and lightweight
 // Used to transport data, especially between a server and its clients (such as web pages)
 // Used to store data, such as in NOSQL databases
