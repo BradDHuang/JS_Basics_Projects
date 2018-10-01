@@ -5,7 +5,9 @@
 
 
 The Promise object 
-represents the eventual completion (or failure) of 
+represents the 
+eventual 
+completion (or failure) of 
 an asynchronous operation, 
 and its resulting value.
 
@@ -41,6 +43,15 @@ console.log(promise1);
 // and at the other end is a client. 
 // The client is often browser-based, but might also be a standalone program.
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then
+  // e.g.
+  p.then(onFulfilled[, onRejected]);
+  
+  p.then((value) => {
+    // fulfillment
+  }, (reason) => {
+    // rejection
+  });
 
 /*
 The then() method 
