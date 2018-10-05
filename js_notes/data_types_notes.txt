@@ -77,6 +77,47 @@ BASIC ARRAY METHODS：
     console.log(animals.slice(2)); // ["camel", "duck", "elephant"]
     console.log(animals.slice(2, 4)); // ["camel", "duck"]
     
+    /*
+    const queryString = {one: "o", two: "t"};
+    let helper = obj => {
+     return Object.entries(obj).reduce((prev, cur) => prev + cur[0] + "=" + cur[1] + "&", "?").slice(0, -1);
+    };
+    console.log(helper(queryString));
+    // ?one=o&two=t
+    */
+    
+    (1) The Object.entries() method 
+    returns an array of a given object's own enumerable property [key, value] pairs.
+    
+    in the same order as that provided by a for...in loop
+    
+    // e.g.
+        const object3 = { 100: 'a', 2: 'b', 7: 'c' };
+        console.log(Object.entries(object3)[2]);
+        // expected output: Array ["100", "a"]
+    
+    // The entries() method 
+    returns a new Array Iterator object 
+    that contains the key/value pairs for each index in the array.
+    // e.g.
+        var a = ['a', 'b', 'c'];
+        var iterator = a.entries();
+        for (let e of iterator) {
+          console.log(e);
+        }
+        // [0, "a"], [1, "b"], [2, "c"]
+        
+    (2) arr.reduce(callback[, initialValue])
+    
+    (3) .slice() with negative index:
+    let str = "12345";
+    console.log(str.slice(0, -1)); 
+    // 1234
+    
+    // A negative index can be used, 
+    // indicating an offset from the end of the sequence. 
+    // e.g. slice(2,-1) extracts the third element (with index 2) through the second-to-last element in the sequence.
+    
     // The splice() method 
     // changes the contents of an array 
     // by removing existing elements and/or adding new elements.
@@ -196,6 +237,8 @@ e.g.
 map() vs. reduce()
 // reduce transforms the entire array
 // while map transfers elements individually
+
+
     
     
 
