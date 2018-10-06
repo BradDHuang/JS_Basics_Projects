@@ -118,6 +118,16 @@ BASIC ARRAY METHODS：
     // indicating an offset from the end of the sequence. 
     // e.g. slice(2,-1) extracts the third element (with index 2) through the second-to-last element in the sequence.
     
+    arr.slice([begin[, end]])
+    // slice(-2) extracts the last two elements in the sequence.
+    // If end is omitted, slice extracts through the end of the sequence (arr.length).
+    
+    slice copies object references into the new array. 
+    Both the original and new array refer to the same object. 
+    If a referenced object changes, 
+    the changes are visible to both the new and original arrays.
+    If a new element is added to either array, the other array is not affected.
+    
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
     array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
     Return value, an array containing the deleted elements.
