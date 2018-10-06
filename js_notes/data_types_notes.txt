@@ -118,6 +118,13 @@ BASIC ARRAY METHODS：
     // indicating an offset from the end of the sequence. 
     // e.g. slice(2,-1) extracts the third element (with index 2) through the second-to-last element in the sequence.
     
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+    Return value, an array containing the deleted elements.
+    For index, 
+    if negative, will begin that many elements from the end of the array 
+    (with origin -1) 
+    
     // The splice() method 
     // changes the contents of an array 
     // by removing existing elements and/or adding new elements.
