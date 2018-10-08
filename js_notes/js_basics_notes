@@ -64,6 +64,32 @@ this:
     
     elie.firstName // "Elie"
     
+    The new operator creates an instance 
+    of a user-defined object type or of one of the built-in object types 
+    that has a constructor function.
+    
+    Creating a user-defined object requires 2 steps:
+        Define the object type by writing a function.
+        Create an instance of the object with new.
+    
+    // Without "new": 
+    If you didn't write the new operator, 
+    the Constructor Function would be invoked like any Regular Function, 
+    without creating an Object. 
+    In this case, the value of 
+    this 
+    is also different.
+    
+    // e.g.
+    let Circle = function (r) {
+    	console.log(this);
+        this.r = r;
+    }
+    let C1 = new Circle(2); // Circle {}
+    console.log(C1.r); // 2
+    let C2 = Circle(3); // global {}
+    console.log(C2.r); // TypeError: Cannot read property 'r' of undefined
+    
     
 Operator Precedence:
 e.g. 2018 - 1998 >= 18; // true
