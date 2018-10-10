@@ -3,6 +3,22 @@
 // Promise 
     // a built-in object type in ES2015
 
+A promise is an object 
+that may produce a single value 
+some time in the future: 
+  either a resolved value, 
+  or a reason that it’s not resolved.
+  
+A promise is an object which 
+can be returned synchronously 
+from an async. function. 
+
+A promise is settled if it’s not pending (it has been resolved or rejected). 
+Once settled, a promise can not be resettled. 
+// Calling resolve() or reject() again will have no effect. 
+
+  The immutability 
+  of a settled promise is an important feature.
 
 The Promise object 
 represents the 
@@ -63,7 +79,13 @@ It takes up to 2 arguments:
     1. callback functions for the success 
     
     2. failure cases of the Promise.
+// If the arguments supplied are not functions, they must be ignored.
 */   
+
+All spec-compatible promises define a .then() method 
+which you use to pass handlers 
+which can take the resolved or rejected value.
+
 // e.g.
 var p = new Promise(function(resolve, reject) {
   resolve('Success!');
@@ -112,6 +134,15 @@ invoke another function that returns a promise … and so on.
     if an async function throws,
     the calling function cannot catch it,
     and the error is swallowed.
+// e.g.
+  fetch(url)
+    .then(process)
+    .then(save)
+    .catch(handleErrors);
+  // Assuming each of the functions, fetch(), process(), and save() return promises, 
+  // process() will wait for fetch() to complete before starting, 
+  // and save() will wait for process() to complete before starting. 
+  // handleErrors() will only run if any of the previous promises reject.
 */
 
 /*
@@ -139,6 +170,23 @@ Promise.all([promise1, promise2, promise3]).then(function(values) {
 // the promise returned by then is rejected
 
 // e.g.
+  save().then(
+    handleSuccess,
+    handleError
+  );
+  // what happens if handleSuccess() throws an error? 
+  // The promise returned from .then() will be rejected, 
+  // but there’s nothing there to catch the rejection.
+  // meaning that an error in your app gets swallowed. 
+  
+  save()
+    .then(handleSuccess)
+    .catch(handleError);
+  // .catch() will handle rejections from either save(), or handleSuccess().
+  
+// ending all promise chains with a .catch() is recommended.
+
+// e.g.
 function asyncDouble(n) {
     return new Promise((resolve, reject) => {
         if (typeof n === 'number') {
@@ -162,6 +210,8 @@ p.then(
     reason => console.log('rejected with', reason)
 );
 // Output is "rejected with Did you see this?"
+
+// ref: https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-promise-27fc71e77261
 
 
 
