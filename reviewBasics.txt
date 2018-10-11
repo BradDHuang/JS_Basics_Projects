@@ -94,6 +94,18 @@ In JS, they are managed automatically by the engine:
     Shallow copy: array, object, and function.
 
 
+Prototype & Inheritance
+
+    All JS objects inherit properties and methods from a prototype.
+
+// e.g.
+    Date objects inherit from Date.prototype. 
+    Array objects inherit from Array.prototype. 
+    Person objects inherit from Person.prototype.
+
+// The Object.prototype is on the top of the prototype inheritance chain:
+    Date objects, Array objects, and Person objects inherit from Object.prototype.
+
 
 
 
