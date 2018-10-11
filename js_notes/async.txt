@@ -13,6 +13,13 @@
 // that will be invoked at some point in the future 
 // when an async function is completed.
 
+// When the first function is done, it will run the second function.
+
+// For JavaScript to know when an async operation has a result 
+// (a result being either returned data 
+// or an error that occurred during the operation), 
+// it points to a function that will be executed once that result is ready. 
+
 
 console.log("Before timeout: " + new Date());
 function f() {
@@ -32,7 +39,7 @@ After timeout: Sun Jul 22 2018 22:21:29 GMT-0700 (Pacific Daylight Time)
 // Callbacks are difficult to manage when multiple async calls
 // need to be sequentialized, or put into some order.
 
-
+// Promises try to fix this nesting problem.
 
 
 
