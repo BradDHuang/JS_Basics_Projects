@@ -283,6 +283,19 @@ depth.
     // with .reduce() & .concat()
     arr1.reduce((acc, val) => acc.concat(val), []);// [1, 2, 3, 4]
     
+    
+// to enable deep level flatten use recursion with reduce and concat:
+    var arr1 = [1,2,3,[1,2,3,4, [2,3,4]]];
+    function flattenDeep(arr1) {
+        return arr1.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+    }
+    flattenDeep(arr1);// [1, 2, 3, 1, 2, 3, 4, 2, 3, 4]    
+
+The Array.isArray() method 
+determines whether the passed value is an Array.
+// e.g.
+Array.isArray([1, 2, 3]);  // true
+    
 
 
 
