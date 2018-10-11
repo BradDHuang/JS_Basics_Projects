@@ -44,7 +44,7 @@ BST.prototype.addNode = function(val) {
             }
         }
     }
-}
+};
 
 let bst = new BST();
 bst.addNode(3);
