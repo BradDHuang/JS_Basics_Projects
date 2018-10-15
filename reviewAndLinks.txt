@@ -79,7 +79,7 @@ Arrow functions:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 
 // An arrow function expression has a shorter syntax than a function expression 
-// and does not have its own this, arguments, super, or new.target. 
+// and does Not have its Own this, arguments, super, or new.target. 
 // These function expressions are best suited for non-method functions, 
 // and they cannot be used as constructors.
 
@@ -90,6 +90,74 @@ Syntax:
 
 // Parenthesize the body of function to return an object literal expression:
 params => ({foo: bar})
+// This is because the code inside braces {} is parsed as a sequence of statements.
+
+2 factors influenced 
+    the introduction of arrow functions: 
+        (1) shorter functions; 
+        (2) no existence of this keyword.
+No separate this
+Until arrow functions, every new function defined its own this value.
+
+// e.g.
+function Person() {
+  // The Person() constructor defines `this` as an instance of itself.
+  this.age = 0;
+  setInterval(function growUp() {
+    // In non-strict mode, the growUp() function defines `this` 
+    // as the global object (because it's where growUp() is executed.), 
+    // which is different from the `this`
+    // defined by the Person() constructor. 
+    this.age++;
+  }, 1000);
+}
+
+In ECMAScript 3/5, the this issue was fixable by assigning the value in this to a variable that could be closed over.
+// e.g.
+    var that = this;
+
+Or, use bind()
+
+An arrow function does not have its own this; 
+the this value of the enclosing lexical context is used 
+i.e. Arrow functions follow the normal variable lookup rules. 
+So while searching for this which is not present in current scope 
+they end up finding this from its enclosing scope .
+
+// e.g.
+function Person(){
+  this.age = 0;
+
+  setInterval(() => {
+    this.age++; // |this| properly refers to the Person object
+  }, 1000);
+}
+
+Since arrow functions do not have their own this, 
+the methods call() or apply() can only pass in parameters. 
+thisArg is ignored.
+
+Arrow functions cannot be used as constructors 
+and will throw an error when used with new.
+
+Arrow functions do not have a prototype property.
+
+// review:
+    The destructuring assignment syntax 
+is a JavaScript expression that makes it possible to 
+    unpack values 
+from arrays, or properties from objects, 
+    into distinct variables.
+// e.g.
+    var a, b;
+    [a, b] = [10, 20];
+    console.log(a); // 10
+    
+// An arrow function cannot contain a line break between its parameters and its arrow.
+
+callback = callback || () => {};      
+// SyntaxError: invalid arrow-function arguments
+callback = callback || (() => {});    // ok
 
 Callback function:
 https://developer.mozilla.org/en-US/docs/Glossary/Callback_function
