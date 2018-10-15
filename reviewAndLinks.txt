@@ -117,6 +117,19 @@ In ECMAScript 3/5, the this issue was fixable by assigning the value in this to 
     var that = this;
 
 Or, use bind()
+// e.g.
+    var module = {
+      x: 42,
+      getX: function() {
+        return this.x;
+      }
+    }
+    var unboundGetX = module.getX;
+    console.log(unboundGetX()); // The function gets invoked at the global scope
+    // expected output: undefined
+    var boundGetX = unboundGetX.bind(module);
+    console.log(boundGetX());
+    // expected output: 42
 
 An arrow function does not have its own this; 
 the this value of the enclosing lexical context is used 
