@@ -81,6 +81,10 @@ console.log(j);
 // 5
 
 
+// (2) Template literals (Template strings) with backticks
+// e.g.
+// `string text ${expression} string text`
+
 
 
 

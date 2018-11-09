@@ -65,10 +65,12 @@ which allows bug tracking
 and agile project management. 
         
         
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
         
-        
-
-
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
 
 
 
