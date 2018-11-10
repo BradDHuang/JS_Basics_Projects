@@ -33,6 +33,54 @@ const [curAge, yearsToRetire] = calcRetireAge(1995);
 console.log("curAge: " + curAge, "yearsToRetire: " + yearsToRetire);
 
 
+// Array
+
+const boxes = document.querySelectorAll(".box");
+// returns a static NodeList object.
+
+// ES5
+/*
+var boxesArr = Array.prototype.slice.call(boxes);
+boxesArr.forEach(function(e) {
+    e.style.backgroundColor = "dodgerblue";
+});
+
+for (var i = 0; i < boxesArr.length; i++) {
+    if (boxesArr[i].className === "box blue") {
+        continue;
+    }
+    boxesArr[i].textContent = "I changed to blue now.";
+}
+*/
+
+// ES6
+const boxesArr = Array.from(boxes);
+boxesArr.forEach(e => e.style.backgroundColor = "orangered");
+
+for (let e of boxesArr) {
+    // if (e.className === "box orange") {
+    if (e.className.includes("orange")) {
+        continue;
+    }
+    e.textContent = "I changed to orange now.";
+}
+
+// ES6
+let ages = [1, 12, 19, 2, 14];
+
+const fullAgeIdx = ages.findIndex(e => e >= 18);
+console.log(ages[fullAgeIdx] + " >= 18.");
+
+// Or use:
+console.log(ages.find(e => e >= 18) + " >= 18.");
+
+
+
+
+
+
+
+
 
 
 
