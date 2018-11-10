@@ -79,6 +79,12 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this
 In arrow functions, this retains the value of the enclosing lexical context's this. 
 In global code, it will be set to the global object.
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Assigning_to_new_variable_names
+
+
+
+
+
 
 
 
