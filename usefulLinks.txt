@@ -102,9 +102,18 @@ Array:
     
     
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
 
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
+The rest parameter syntax allows us to represent an indefinite number of arguments 
+as an array.
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+arguments is an 
+    Array-like object 
+accessible inside functions that contains 
+the values of the arguments passed to that function.
 
 
 

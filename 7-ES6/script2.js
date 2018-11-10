@@ -99,6 +99,14 @@ Array.from(all).forEach(e => e.style.color = "purple");
 */
 
 
+// Rest Parameters
+// ES6
+function isFullAge(limit, ...rest) {
+    console.log(rest); // Array [1990, 2002, 1995]
+    rest.forEach(e => console.log(new Date().getFullYear() - e >= limit));
+}
+
+isFullAge(18, 1990, 2002, 1995);
 
 
 
