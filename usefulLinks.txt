@@ -109,6 +109,10 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest
 The rest parameter syntax allows us to represent an indefinite number of arguments 
 as an array.
 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters
+Default function parameters allow named parameters to be initialized with default values 
+if no value or undefined is passed.
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
 arguments is an 
     Array-like object 
