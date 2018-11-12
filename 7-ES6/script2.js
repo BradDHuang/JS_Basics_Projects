@@ -109,6 +109,19 @@ function isFullAge(limit, ...rest) {
 isFullAge(18, 1990, 2002, 1995);
 
 
+// Map 
+
+const map = new Map();
+
+map.set(1, "first ele.");
+
+map.forEach((value, key) => console.log(`${key}: ${value}`));
+
+// arr.forEach(function callback(currentValue[, index[, array]]) {
+//     //your iterator
+// }[, thisArg]);
+
+
 
 
 
