@@ -116,7 +116,10 @@ BASIC ARRAY METHODS：
     
     // A negative index can be used, 
     // indicating an offset from the end of the sequence. 
-    // e.g. slice(2,-1) extracts the third element (with index 2) through the second-to-last element in the sequence.
+    
+    // e.g. 
+    slice(2,-1) 
+    extracts the third element (with index 2) through the second-to-last element in the sequence.
     
     arr.slice([begin[, end]])
     // slice(-2) extracts the last two elements in the sequence.
