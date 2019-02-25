@@ -205,10 +205,19 @@ var emily = {
     age: 28,
     job: "sdeII"
 };
+
 // brad.pre.call(emily, "friendly", "morning");
 
+// brad.pre.apply(emily, ["friendly", "afternoon"]);
 
-// BIND, preset some param.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind
+
+// BIND, 
+// preset some param.
 
 var bradFriendly = brad.pre.bind(brad, "friendly");
 // bradFriendly("noon");
