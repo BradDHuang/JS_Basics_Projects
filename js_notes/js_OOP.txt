@@ -1,7 +1,7 @@
 
 OOP:
-a programming Model based around objects.
-
+a programming Model 
+based around objects.
 
 CONSTRUCTOR PATTERN:
 To use a ‘Constructor’ function, 
@@ -44,7 +44,9 @@ Multi-Constructors
         Car.call(this, ...)
         
         Car.apply(this, [...])
+        
         Car.apply(this, arguments)
+        
         e.g. 
         function listArgs() {
         
@@ -63,34 +65,38 @@ Anytime
 an object is created using the "new", 
 the property called "__proto__" gets created,
 linking the object 
-and the prototype property of the constructor func.
+and the prototype property (of the constructor func.)
 
     e.g.
     function Person(name) {
         this.name = name;
     }
     var elie = new Person("Elie");
-    
     elie.__proto__ === Person.prototype 
     // true
     
     Person.prototype.constructor 
     // ƒ Person(name) { this.name = name; }
+    
     Person.prototype.constructor === Person 
     // true
+    Every constructor func. has a property called "prototype",
+        which is an obj;
+    The prototype obj. has a property called "constructor",
+        which points back to the constructor func.
     
 // Object Prototypes are the mechanism by which JavaScript objects inherit features from one another.
     
 prototype:
     the prototype is Shared 
-    among ALL objects created by that constructor func.
+    among ALL objects 
+    created by that constructor func.
     
     e.g.
     var colt = new Person("Colt");
     
     // Set
     Person.prototype.isInstructor = true;
-    
     // For all instances.
     elie.isInstructor; // true
     colt.isInstructor; // true
@@ -99,11 +105,11 @@ prototype:
     // the way to see all the properties of specified javascipt object in console. 
     
     var arr = [];
+    
     arr.__proto__ === Array.prototype; 
     // true
     
 prototype Chain:
-
     e.g.1 
     Array -(.prototype)-> Array.prototype -(.__proto__)-> Object.prototype -(.__proto__)-> null
     
@@ -143,17 +149,39 @@ prototype Chain:
     
     Cat.prototype = new Animal();
     //it will properly follow the prototype chain through the inheritance hierarchy.
+    
     Cat.prototype = Animal.prototype;
     // any runtime changes to the Cat prototype 
-    // would also affect the Animal prototype.
+    // would Also 
+    // affect the Animal prototype.
+    
+use:
+Object.create()
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create
+
+TWO parts of inheritance:
+
+    1. Set the prototype to be an obj.
+       created with another prototype:
+    Cat.prototype = Object.create(Animal.prototype);
+    // any runtime changes to the Cat prototype 
+    // would NOT 
+    // affect the Animal prototype.
+    
+    Cat.prototype.constructor // Animal
+    
+    2. Reset the constructor property:
+    Cat.prototype.constructor = Cat;
 
 // Notice!!!
 function Dog() {} // the usual constructor function
 
 Dog.prototype = new Animal();
+    // "new" added additional unnecessary properties
+    // on the prototype obj.
 
 Dog.prototype.constructor = Dog;
-
 
 // Note that the prototype in Foo.prototype is not to form a prototype chain. 
 // Foo.prototype 
@@ -197,12 +225,100 @@ Refactoring:
     }
     
     // Once Only
-    
     Person.prototype.sayHi = function() {
         return "Hi " + this.name;
     }
     elie = new Person("Elie");
     elie.sayHi();
+    
+    e.g.
+    function Vehicle(make, model, year) {
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.isRunning = false; // default 
+    }
+    
+    Vehicle.prototype.turnOn = function() {
+        this.isRunning = true;
+    }
+    Vehicle.prototype.turnOff = function() {
+        this.isRunning = false;
+    }
+    Vehicle.prototype.honk = function() {
+        if(this.isRunning) {
+            return "Beep!";
+        } else {
+            return "...";
+        }
+    }
+    
+    let bCar = new Vehicle("Chevy", "Cap", 2013);
+    console.log(bCar);
+    console.log(bCar.honk());
+    bCar.turnOn();
+    console.log(bCar.honk());
+    
+instanceof
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof
+
+e.g.
+// 1 - Create a constructor function for a Person. Each person should have a firstName, lastName, favoriteColor, favoriteNumber)
+function Person(firstName, lastName, favoriteColor, favoriteNumber) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.favoriteColor = favoriteColor;
+    this.favoriteNumber = favoriteNumber;
+    this.family = [];
+}
+
+// 2 - Add a function on the Person.prototype called fullName that returns the firstName and lastName property of an object created by the Person constructor concatenated together.
+Person.prototype.fullName = function() {
+    return this.firstName + " " + this.lastName;
+};
+var person = new Person("Elie", "Schoppik", "purple", 34);
+console.log(person.fullName()); // "Elie Schoppik"
+
+// 3 -  Add a property on the object created from the Person function called family which is an empty array. This will involve you going back and adding an additional line of code to your Person constructor you previously created in exercise 1.
+
+// 4 - Add a function on the Person.prototype called addToFamily which adds an object constructed from the Person constructor to the family array. To make sure that the object you are adding is an object construced from the Person constructor (HINT - take a look at the instanceof keyword). Make sure that your family array does not include duplicates! This method should return the length of the family array.    
+    Person.prototype.addToFamily = function(person) {
+        if (this.family.indexOf(person) === -1 && (person instanceof Person)) {
+            this.family.push(person);
+        }
+        return this.family.length;
+    };
+    var anotherPerson = new Person();
+    console.log(person.addToFamily(anotherPerson)); // 1
+    console.log(person.addToFamily(anotherPerson)); // 1
+    console.log(person.family.length); // 1
+    
+    console.log(person.addToFamily("test")); // 1
+    console.log(person.addToFamily({})); // 1
+    console.log(person.addToFamily([])); // 1
+    console.log(person.addToFamily(false)); // 1
+    console.log(person.family.length); // 1
+
+// PART II 
+// 1 - Implement your own version of Array.prototype.map. The function should accept a callback and return a new array with the result of the callback for each value in the array. 
+Array.prototype.map = function(callback) {
+    let newArr = [];
+    for (let i = 0; i < this.length; i++) {
+        newArr.push(callback(this[i], i, this));
+    }
+    return newArr;
+};
+
+// 2 - Implement a function called reverse that reverses a string and place it on the String.prototype
+String.prototype.reverse = function() {
+    let newStr = '';
+    for (let i = this.length - 1; i >= 0; i--) {
+        newStr += this[i];
+    }
+    return newStr;
+};
+console.log("test".reverse()); // "tset"
+console.log("tacocat".reverse()); // "tacocat"
     
 Closures:
 // A closure is the combination of a function and the lexical environment within which that function was declared.
@@ -261,10 +377,17 @@ OOP Implementation in ES5:
     
     
 NEW OPERATOR:
-    1. Create a new object.
-    2. Assign the ‘this’ value of the constructor to the new object (so this points to the new object).
-    3. Execute the code inside the constructor (adds properties to the new object).
-    4. Return the new object.
+
+    1. Creates a new object.
+    
+    2. Assigns the ‘this’ value of the constructor to the new object (so this points to the new object).
+    
+    3. Executes the code inside the constructor (adds properties to the new object).
+       Creates a link (which we can access as __proto__)
+       between the obj. created 
+       and the prototype property of the constructor func.
+    
+    4. Returns the new object.
     
     
 ACCESS VALUES
@@ -290,7 +413,7 @@ ACCESS VALUES
     delete person1.name;
     console.log(person1.name); // "Nicholas" - from the prototype
     
-    
+
 
     
     

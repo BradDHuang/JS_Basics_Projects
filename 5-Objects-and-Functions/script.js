@@ -158,7 +158,11 @@ function retirementAge(retireAge) {
         var age = 2018 - yearOfBirth;
         console.log((retireAge - age) + str);
         
-        // Inner func. has Always access to the Var. & Param. of its Outer func!
+        // Inner func. 
+        // Always has access to 
+        // the Var. & Param. of its 
+        // Outer func!
+        // Even after the outer func. has returned.
     }; 
 }
 
