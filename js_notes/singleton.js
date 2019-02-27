@@ -17,6 +17,9 @@ var Singleton = (function () {
         }
     };
 })();
+
+console.log(Singleton); 
+// Object {getInstance: }
  
 function run() {
  
