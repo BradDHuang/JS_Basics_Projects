@@ -140,7 +140,10 @@ https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt
         A string 
         containing the text entered by the user, or null.
         
-
+What is the 
+event loop
+?
+https://www.youtube.com/watch?v=8aGhZQkoFbQ
 
 
 
