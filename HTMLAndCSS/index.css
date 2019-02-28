@@ -1,0 +1,27 @@
+.wrapper {
+    height: 100vh;
+    /*background-color: red;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.header, .footer {
+    height: 30px;
+}
+
+.main {
+    flex: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    border: 1px solid lightgreen;
+    width: 20vw;
+}
+
+li a {
+    text-decoration: none;
+}
+
