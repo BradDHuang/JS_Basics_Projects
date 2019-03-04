@@ -6,6 +6,7 @@
     <body>
         <h2>Async JS</h2>
         <script>
+        /*
             function getRecipe() {
                 setTimeout(() => {
                     const recipeIDs = [1,2,4,8];
@@ -28,6 +29,53 @@
                 }, 1000);
             }
             getRecipe();
+        */
+            const getIDs = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve([2,4,6,8]);
+                    // reject('error');
+                }, 1000);
+            });
+            
+            const getRecipe = recipeID => {
+                return new Promise((res, rej) => {
+                    setTimeout(id => {
+                        const recipe = {
+                            title: 'Cajun',
+                            chef: 'Ben'
+                        };
+                        // res(`${id}: ${recipe.title}`);
+                        res(recipe);
+                    }, 1000, recipeID);
+                });  
+            };
+            
+            const getRecipe2 = chef => {
+                return new Promise((res, rej) => {
+                    setTimeout(chef => {
+                        const recipe2 = {
+                            title: 'Fiesta Sides'
+                        };
+                        res(`${chef} made ${recipe2.title}`);
+                    }, 1000, chef);
+                });
+            };
+            
+            getIDs
+            .then(IDs => {
+                console.log(IDs);
+                return getRecipe(IDs[2]);
+            })
+            .then(recipe => {
+                console.log(recipe);
+                return getRecipe2(recipe.chef);
+            })
+            .then(recipe2 => {
+                console.log(recipe2);
+            })
+            .catch(err => {
+                console.log(err);
+            });
         </script>
     </body>
 </html>
