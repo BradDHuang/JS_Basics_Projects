@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Async</title>
+    </head>
+    <body>
+        <h2>Async JS</h2>
+        <script>
+            function getRecipe() {
+                setTimeout(() => {
+                    const recipeIDs = [1,2,4,8];
+                    console.log(recipeIDs);
+                    
+                    setTimeout(id => {
+                        const recipe = {
+                            title: 'Fiesta Sides',
+                            chef: 'Brad'
+                        };
+                        console.log(`${id}: ${recipe.title}`);
+                        
+                        setTimeout(chef => {
+                            const recipe2 = {
+                                title: 'Cajun Sides'
+                            };
+                            console.log(`${chef} made ${recipe2.title}`);
+                        }, 1000, recipe.chef);
+                    }, 1000, recipeIDs[2]);
+                }, 1000);
+            }
+            getRecipe();
+        </script>
+    </body>
+</html>
