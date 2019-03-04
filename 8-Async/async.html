@@ -29,7 +29,7 @@
                 }, 1000);
             }
             getRecipe();
-        */
+        *//*
             const getIDs = new Promise((resolve, reject) => {
                 setTimeout(() => {
                     resolve([2,4,6,8]);
@@ -62,7 +62,7 @@
                     }, 1000, chef);
                 });
             };
-            /*
+            *//*
             getIDs
             .then(IDs => {
                 console.log(IDs);
@@ -78,7 +78,7 @@
             .catch(err => {
                 console.log(err);
             });
-            */
+            *//*
             async function getRecipes() {
                 const IDs = await getIDs;
                 console.log(IDs);
@@ -93,6 +93,23 @@
             .then(res => {
                 console.log(res);
             });
+            */
+            function getWeather(woeid) {
+                // fetch('https://www.metaweather.com/api/location/2487956/');
+                fetch(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}/`)
+                .then(res => {
+                    // console.log(res);
+                    return res.json(); // .json() is async
+                })
+                .then(data => {
+                    // console.log(data);
+                    const today = data.consolidated_weather[0];
+                    console.log(`Temp of ${data.title} today is from ${today.min_temp} to ${today.max_temp}`);
+                })
+                .catch(err => console.log(err));
+            }
+            getWeather(2487956);
+            getWeather(44418)
         </script>
     </body>
 </html>
