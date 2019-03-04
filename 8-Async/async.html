@@ -54,13 +54,15 @@
                 return new Promise((res, rej) => {
                     setTimeout(chef => {
                         const recipe2 = {
-                            title: 'Fiesta Sides'
+                            title: 'Fiesta Sides',
+                            chef
                         };
-                        res(`${chef} made ${recipe2.title}`);
+                        // res(`${chef} made ${recipe2.title}`);
+                        res(recipe2);
                     }, 1000, chef);
                 });
             };
-            
+            /*
             getIDs
             .then(IDs => {
                 console.log(IDs);
@@ -75,6 +77,21 @@
             })
             .catch(err => {
                 console.log(err);
+            });
+            */
+            async function getRecipes() {
+                const IDs = await getIDs;
+                console.log(IDs);
+                const recipe = await getRecipe(IDs[2]);
+                console.log(recipe);
+                const recipe2 = await getRecipe2(recipe.chef);
+                console.log(recipe2);
+                
+                return [recipe, recipe2];
+            }
+            getRecipes()
+            .then(res => {
+                console.log(res);
             });
         </script>
     </body>
