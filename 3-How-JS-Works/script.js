@@ -82,7 +82,16 @@ function third() {
 
 ///////////////////////////////////////
 // Lecture: The this keyword
-
+/*
+1. Regular func. call:
+    'this' points at the global obj., (the Window obj., in the browser).
+    
+2. Method call:
+    'this' points to the obj. that is calling the method.
+    
+3. 'this' is Not assigned a value
+    until a func. where it is defined is actually called.
+*/
 // console.log(this); // Window(default) object.
 
 // calculateAge(1994);
@@ -104,7 +113,7 @@ var brad = {
         
         // function inner() {
             
-        //     console.log(this); // Window(default) object.
+        //     console.log(this); // Window (default) object.
         // }
         // inner();
     }
@@ -120,4 +129,41 @@ var ben = {
 ben.calculateAge = brad.calculateAge; // Borrow a func.
 ben.calculateAge();
 // there is an object(ben) returned by calling calculateAge().
+
+// In Visual Studio Code
+// console.log(this);
+
+function calculateAge(year) {
+    console.log(2019 - year); // 25
+    console.log(this); // global
+}
+calculateAge(1994);
+
+var ben = {
+    name: 'Ben',
+    birthYear: 1995,
+    calculateAge: function() {
+        console.log(2019 - this.birthYear);
+        function inner() {
+
+            console.log(this); // global
+            // 1. Regular func. call
+
+        }
+        inner();
+    }
+}
+ben.calculateAge(); // 24
+// 2. Method call
+    
+var mike = {
+    name: 'Mike',
+    birthYear: 1992,
+}
+
+mike.calculateAge = ben.calculateAge;
+
+mike.calculateAge(); // 27
+// 3. 'this' is Not assigned a value
+//     until a func. where it is defined is actually called.
 
