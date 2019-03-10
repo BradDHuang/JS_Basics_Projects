@@ -26,7 +26,7 @@ function fibonacci3(idx, memo) {
     // console.log(memo, idx);
     if (memo[idx]) return memo[idx];
     if (idx <= 1) return 1;
-    return memo[idx] = fibonacci3(idx - 1, memo) + fibonacci3(idx -2, memo);
+    return memo[idx] = fibonacci3(idx - 1, memo) + fibonacci3(idx - 2, memo);
 }
 console.log(fibonacci3(3), fibonacci3(5));
 

@@ -56,7 +56,7 @@ function helper(res, ele, arr) {
         res.push(ele.join(''));
         return;
     }
-    for (let i =0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         if (ele.includes(arr[i])) continue;
         ele.push(arr[i]);
         helper(res, ele, arr);

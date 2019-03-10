@@ -8,7 +8,7 @@ const arr = [1,2,3,4,4,5];
 function binarySearch(arr, k) {
     if (arr.length > 0) {
         let startIdx = 0;
-        let endIdx = arr.length -1;
+        let endIdx = arr.length - 1;
         while (startIdx + 1 < endIdx) {
             let midIdx = Math.floor(startIdx + (endIdx - startIdx) / 2);
             // console.log('midIdx', midIdx);
